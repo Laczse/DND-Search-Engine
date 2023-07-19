@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../../chosen/docsupport/style.css">
+  <link rel="stylesheet" href="../../chosen/docsupport/style.css">
   <link rel="stylesheet" href="../../chosen/docsupport/prism.css">
-    <link rel="stylesheet" href="../../chosen/chosen.css">
+  <link rel="stylesheet" href="../../chosen/chosen.css">
 
-    <title>Magic Items</title>
+
+  <script defer src="JSItems.js"></script>
+  <title>Magic Items</title>
 </head>
+
 <body>
 
-    
-<button class="indexbutton" type="button" name="Main.html"
-    onclick="location.href='Main.html'">Return to main page</button>
+
+  <button class="indexbutton" type="button" name="Main.html" onclick="location.href='Main.html'">Return to main
+    page</button>
+  <br>
+  <button class="indexbutton" type="button" name="Spells" onclick="location.href='Spells.html'">Spells</button>
+  <br>
+  <button class="indexbutton" type="button" name="Creatures" onclick="location.href='Creatures.html'">Creatures</button>
+  <br>
+
+
+  <h1>Magic Items</h1>
+  <form id="searchItems">
+    <label>Item name:</label>
+    <span style="margin: 0 72px"></span>
+    <label>Item type:</label>
+    <span style="margin: 0 75px"></span>
+
+
+
+    <label class="col-3">Item rarity:</label>
+
     <br>
-<button class="indexbutton" type="button" name="Spells"
-    onclick="location.href='Spells.html'">Spells</button>    
-    <br>
-<button class="indexbutton" type="button" name="Creatures"
-    onclick="location.href='Creatures.html'">Creatures</button>
-    <br>
+    <input type="text" id="itemName" name="itemName">
+    <span style="margin: 0 10px"></span>
     
+    <select data-placeholder="Choose type" class="chosen-select" multiple tabindex="4" id="type">
+      <option value="Armor">Armor</option>
+      <option value="Potion">Potion</option>
+      <option value="Ring">Ring</option>
+      <option value="Rod">Rod</option>
+      <option value="Scroll">Scroll</option>
+      <option value="Staff">Staff</option>
+      <option value="Wand">Wand</option>
+      <option value="Weapon">Weapon</option>
+      <option value="Wondrous item">Wondrous item</option>
+    </select>
     
-    <h1>Magic Items</h1>
-    <form onsubmit="handleSubmit()">
-        <label for="fname">Item name:</label>
-        <span style="margin: 0 72px"></span>
-        <label for="fname">Item type:</label>
-        <span style="margin: 0 75px"></span>
+    <span style="margin: 0 10px"></span>
 
 
-        
-        <label class="col-3">Item rarity:</label>
+    <select data-placeholder="Choose rarity" class="chosen-select" multiple tabindex="4" id="rarity">
+      <option value="Common">Common</option>
+      <option value="Uncommon">Uncommon</option>
+      <option value="Rare">Rare</option>
+      <option value="Very rare">Very rare</option>
+      <option value="Legendary/Artifact">Legendary/Artifact</option>
+    </select>
 
-        <br>
-        <input type="text" id="type" name="type">
-        <span style="margin: 0 10px"></span>
-        <input type="text" id="name" name="name">
-        <span style="margin: 0 10px"></span>
 
-        <select data-placeholder="Choose rarity" class="chosen-select" multiple tabindex="4">
-            <option value="Common">Common</option>
-            <option value="Uncommon">Uncommon</option>
-            <option value="Rare">Rare</option>
-            <option value="Very rare">Very rare</option>
-            <option value="Legendary/Artifact">Legendary/Artifact</option>
-            </select>
 
-            
-
-        <br><br>
-        <input type="submit" value="Submit">
-      </form>
+    <br><br>
+    <button type="button" id="submit">Submit</button>
+  </form>
 </body>
 
-<script>
-   function handleSubmit(){
-    let name = document.getElementById("name").value;
-    
-    
-    }
-
-    $(document).ready(function(){
-    
-    var multipleSelectDropdown = new Choices('#inputGroupSelect04', {
-       removeItemButton: true
-     }); 
-    
-    
-});
-</script>
 <script src="../../chosen/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
-  <script src="../../chosen/chosen.jquery.js" type="text/javascript"></script>
-  <script src="../../chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../chosen/chosen.jquery.js" type="text/javascript"></script>
+<script src="../../chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+
 </html>
