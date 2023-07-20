@@ -4,22 +4,21 @@ import path from "path";
 import process from "process";
 import url from "url";
 import qs from "querystring";
-
+import express from 'express';
+import bodyParser from 'body-parser';
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
 const rootFileSystem = process.cwd();
 
-const server = http.createServer(requestHandler);
-function requestHandler(req, res) {
-  try {
-    handleRequest(req, res);
-  } catch (e) {
-    console.log("!!: " + e);
-    errorResponse(res, 500, "");
-  }
-}
+const app = express();
+
+app.use(bodyParser.json());
+
+app.get('/', (req, res) => {
+  fileResponse(res, "PublicResources/html/Main.html");
+});
 
 
 function handleRequest(req, res) {
@@ -60,12 +59,18 @@ function handleRequest(req, res) {
           break;
       }
       break;
+
     case "POST": {
       console.log("POST");
       let pathElements = queryPath.split("/");
       console.log(pathElements[pathElements.length - 1]); //to be looked at /cg
       switch (pathElements[pathElements.length - 1]) {
-        case "login-attempt":
+        case "itemSearch":
+          let object = JSON.parse(req);
+          let object2 = JSON.parse(res);
+          console.log(object);
+          console.log("\n");
+          console.log(object2);
 
           break;
         default:
@@ -149,6 +154,6 @@ function securePath(userPath) {
 }
 
 
-server.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
