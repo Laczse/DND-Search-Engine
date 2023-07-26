@@ -21,13 +21,15 @@ async function handleSubmit() {
     console.log(searchObject);
     await fetch('itemSearch', {
         method: 'POST',
-        headers:{
+        headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"
         },
         body: searchObject
     }
     )
+    .then(response => response.text())
+    .then(text => console.log(text))
 };
 
 
