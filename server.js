@@ -7,6 +7,8 @@ import qs from "querystring";
 import express from 'express';
 import bodyParser from 'body-parser';
 
+import { insertItem, searchItems } from "./database.js";
+
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -17,25 +19,25 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(rootFileSystem + "/PublicResources/html/Main.html");
+  res.sendFile(rootFileSystem + "/publicResources/html/main.html");
 });
-app.get('/Main.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/PublicResources/html/Main.html");
+app.get('/main.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/main.html");
 });
-app.get('/MagicItems.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/PublicResources/html/MagicItems.html");
-});
-
-app.get('/Spells.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/PublicResources/html/Spells.html");
+app.get('/magicItems.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/magicItems.html");
 });
 
-app.get('/Creatures.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/PublicResources/html/Creatures.html");
+app.get('/spells.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/spells.html");
 });
 
-app.get('/JSItems.js', (req, res) => {
-  res.sendFile(rootFileSystem + "/PublicResources/JS/JSItems.js");
+app.get('/creatures.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/creatures.html");
+});
+
+app.get('/jsItems.js', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/js/jsItems.js");
 });
 
 app.get('/chosen/chosen.css', (req, res) => {
@@ -72,6 +74,20 @@ app.get('/chosen/docsupport/init.js', (req, res) => {
 
 app.post('/itemSearch', (req, res) => {
   console.log(req.body);
+  console.log(req.body.name)
+  if (req.body.name != ' ') {
+    let items = searchItems(toLowerCase(req.body.name));
+    console.log("\n");
+    console.log(items);
+  }else{
+    console.log("No name");
+  }
+  /*
+  insertItem(req.body.name, req.body.type, req.body.rarity);
+  let items = searchItems(req.body.name);
+  console.log("\n");
+  console.log(items);*/
+
 });
 
 
