@@ -10,9 +10,7 @@ async function handleSubmit() {
     let type = $('#type').val();
     let rarity = $('#rarity').val();
     console.log(name);
-    console.log("\n");
     console.log(type);
-    console.log("\n");
     console.log(rarity);
 
     let searchObject = JSON.stringify({
