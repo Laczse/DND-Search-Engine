@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../../chosen/docsupport/style.css">
   <link rel="stylesheet" href="../../chosen/docsupport/prism.css">
   <link rel="stylesheet" href="../../chosen/chosen.css">
+  <link rel="stylesheet" href="/search.css">
 
   <script defer src="jsItems.js"></script>
   <title>Magic Items</title>
@@ -28,19 +29,19 @@
 
   <h1>Magic Items</h1>
   <form id="searchItems">
-    <label>Item name:</label>
-    <span style="margin: 0 72px"></span>
-    <label>Item type:</label>
+
+
+
+    <label for="itemname" class="col-3">Item name:</label>
+    <span style="margin: 0 71px"></span>
+    <label for="type" class="col-3">Item type:</label>
     <span style="margin: 0 75px"></span>
-
-
-
-    <label class="col-3">Item rarity:</label>
-
+    <label for="rarity" class="col-3">Item rarity:</label>
     <br>
     <input type="text" id="itemName" name="itemName">
+
     <span style="margin: 0 10px"></span>
-    
+
     <select data-placeholder="Choose type" class="chosen-select" multiple tabindex="4" id="type">
       <option value="Armor">Armor</option>
       <option value="Potion">Potion</option>
@@ -52,9 +53,8 @@
       <option value="Weapon">Weapon</option>
       <option value="Wondrous item">Wondrous item</option>
     </select>
-    
-    <span style="margin: 0 10px"></span>
 
+    <span style="margin: 0 10px"></span>
 
     <select data-placeholder="Choose rarity" class="chosen-select" multiple tabindex="4" id="rarity">
       <option value="Common">Common</option>
@@ -64,6 +64,23 @@
       <option value="Legendary/Artifact">Legendary/Artifact</option>
     </select>
 
+    <br>
+    <label for="attunement" class="col-3">Attunement:</label>
+    <span style="margin: 0 67px"></span>
+    <label for="charges" class="col-3">Charges:</label>
+    <br>
+
+    <select data-placeholder="Requires attunement" class="chosen-select" multiple tabindex="4" id="attunement">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+
+    <span style="margin: 0 10px"></span>
+
+    <select data-placeholder="Has charges" class="chosen-select" multiple tabindex="4" id="charges">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
 
 
     <br><br>

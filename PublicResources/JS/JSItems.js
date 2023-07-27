@@ -9,6 +9,8 @@ async function handleSubmit() {
     let name = document.getElementById("itemName").value;
     let type = $('#type').val();
     let rarity = $('#rarity').val();
+    let attunement = $('#attunement').val();
+    let charges = $('#charges').val();
     console.log(name);
     console.log(type);
     console.log(rarity);
@@ -16,7 +18,9 @@ async function handleSubmit() {
     let searchObject = JSON.stringify({
         "name": name,
         "type": type,
-        "rarity": rarity
+        "rarity": rarity,
+        "attunement": attunement,
+        "charges": charges
     });
     console.log(searchObject);
     await fetch('itemSearch', {
