@@ -43,7 +43,7 @@ function createList(list) {
         let spaceName = 200 - getTextWidth(list[i].name);
         let spaceType = 225 - getTextWidth(list[i].type);
         let spaceRarity = 200 - getTextWidth(list[i].rarity);
-        collapsibleButton.innerHTML = '<span style="padding-right: ' + spaceName +'px">'+ list[i].name + '</span><span style="padding-right: ' + spaceType +'px">' + list[i].type + '</span><span style="padding-right: ' + spaceRarity +'px">' + list[i].rarity + '</span>';
+        collapsibleButton.innerHTML = '<span style="padding-right: ' + spaceName + 'px">' + list[i].name + '</span><span style="padding-right: ' + spaceType + 'px">' + list[i].type + '</span><span style="padding-right: ' + spaceRarity + 'px">' + list[i].rarity + '</span>';
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
@@ -75,11 +75,11 @@ function activateCollapsible() {
 function getTextWidth(text) {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
-  
+
     context.font = getComputedStyle(document.body).font;
-  
+
     return context.measureText(text).width;
-  }
+}
 
 
 let list = [{
@@ -108,6 +108,5 @@ let list = [{
     "rarity": "Rare"
 }];
 
-console.log(list);
 createList(list);
 activateCollapsible();
