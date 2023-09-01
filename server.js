@@ -73,6 +73,10 @@ app.get('/chosen/docsupport/init.js', (req, res) => {
   res.sendFile(rootFileSystem + "/chosen/docsupport/init.js");
 });
 
+app.get('/sortingArrows', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/icons/sortingArrows.png");
+});
+
 app.post('/itemSearch', (req, res) => {
   console.log(req.body);
   console.log(req.body.name)
