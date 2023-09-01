@@ -77,6 +77,10 @@ app.get('/sortingArrows', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/icons/sortingArrows.png");
 });
 
+app.get('/style', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/css/style.css");
+});
+
 app.post('/itemSearch', (req, res) => {
   console.log(req.body);
   console.log(req.body.name)
