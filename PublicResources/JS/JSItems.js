@@ -3,6 +3,11 @@
 let submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", handleSubmit);
 
+let contentButton = document.getElementById("change");
+contentButton.addEventListener("click", toggleCollapsible);
+
+let visible = true;
+
 async function handleSubmit() {
 
     console.log("JUHUU!")
@@ -79,6 +84,30 @@ function getTextWidth(text) {
     context.font = getComputedStyle(document.body).font;
 
     return context.measureText(text).width;
+}
+
+function deleteCollapsible(){
+    let coll = document.getElementsByClassName("collapsible");
+    let repeats = coll.length;
+    for (i = 0; i < repeats; i++) {
+        coll[0].remove();
+        console.log("Deleting element: " + i);
+    }
+    let div = document.getElementsByClassName("content");
+    for (i = 0; i < repeats; i++) {
+        div[0].remove();
+    }
+}
+
+function toggleCollapsible(){
+    if(visible == true){
+        console.log("Deleting elements");
+        deleteCollapsible();
+    } else{
+        console.log("Creating elements");
+        createList(list);
+    }
+    visible = visible * -1;
 }
 
 
