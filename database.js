@@ -1,7 +1,7 @@
 import fs from 'fs';
 import Database from 'better-sqlite3';
 
-export { insertItem, searchItems };
+export { insertItem, searchItems, getAllItems };
 
 const db_path = './data.db';
 const db = connectDB();
@@ -34,6 +34,13 @@ function searchItems(itemName) {
     return itemSearch;
 
 };
+
+function getAllItems(){
+    const stmt = db.prepare('SELECT * FROM items');
+    const itemSearch = stmt.all();
+    return itemSearch;
+}
+
 
 function printDB() {
     const stmt = db.prepare('SELECT * FROM items');

@@ -1,5 +1,4 @@
 
-
 let submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", handleSubmit);
 
@@ -113,6 +112,26 @@ function toggleCollapsible() {
     visible = visible * -1;
 }
 
+async function onLoad() {
+    console.log(list);
+    let searchObject = JSON.stringify({
+    });
+
+    await fetch('onLoadItemSearch', {
+        method: 'POST',
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: searchObject
+    }
+    )
+        .then(response => response.json())
+        .then(json => createList(json))
+}
+
+
+
 
 let list = [{
     "name": "Flame Tongue",
@@ -151,5 +170,4 @@ let list = [{
     "charges": "No"
 }];
 
-
-createList(list);
+onLoad();

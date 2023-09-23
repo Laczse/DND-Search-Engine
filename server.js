@@ -7,7 +7,7 @@ import qs from "querystring";
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import { insertItem, searchItems } from "./database.js";
+import { insertItem, searchItems, getAllItems } from "./database.js";
 import { capitalizeWords } from "./supportFunctions.js";
 
 const hostname = '127.0.0.1';
@@ -98,6 +98,15 @@ app.post('/itemSearch', (req, res) => {
     return res.send("null");
   }
 });
+
+app.post('/onLoadItemSearch', (req, res) => {
+    let items = getAllItems();
+    console.log("\n");
+    console.log(items);
+    return res.send(items);
+  }
+);
+
 
 
 app.listen(port, hostname, () => {
