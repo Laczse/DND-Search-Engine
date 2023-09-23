@@ -9,7 +9,6 @@ function capitalizeWords(str){
         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
 
     }
-
     //Join all the elements of the array back into a string 
     //using a blankspace as a separator 
     const str2 = arr.join(" ");

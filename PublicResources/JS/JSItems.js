@@ -38,7 +38,7 @@ async function handleSubmit() {
     }
     )
         .then(response => response.text())
-        .then(text => console.log(text))
+        .then(text => console.log("Test \n" + text))
 };
 
 function createList(list) {
@@ -52,10 +52,13 @@ function createList(list) {
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
-        divElement.textContent = 'Test ' + i;
+        let divContent = list[i].type + ', ' + list[i].rarity + '<br>' + list[i].text;
+        console.log(divContent);
+        divElement.innerHTML = divContent;
         divElement.className = 'content';
         document.body.appendChild(divElement);
     }
+    activateCollapsible();
 }
 
 
@@ -86,7 +89,7 @@ function getTextWidth(text) {
     return context.measureText(text).width;
 }
 
-function deleteCollapsible(){
+function deleteCollapsible() {
     let coll = document.getElementsByClassName("collapsible");
     let repeats = coll.length;
     for (i = 0; i < repeats; i++) {
@@ -99,11 +102,11 @@ function deleteCollapsible(){
     }
 }
 
-function toggleCollapsible(){
-    if(visible == true){
+function toggleCollapsible() {
+    if (visible == true) {
         console.log("Deleting elements");
         deleteCollapsible();
-    } else{
+    } else {
         console.log("Creating elements");
         createList(list);
     }
@@ -112,30 +115,41 @@ function toggleCollapsible(){
 
 
 let list = [{
-    "name": "Flametongue",
+    "name": "Flame Tongue",
     "type": "Weapon",
-    "rarity": "Rare"
+    "rarity": "Rare",
+    "attunement": "Yes",
+    "charges": "No",
+    "text": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword."
 },
 {
     "name": "Alchemy Jug",
     "type": "Wondrous",
-    "rarity": "Uncommon"
+    "rarity": "Uncommon",
+    "attunement": "No",
+    "charges": "No"
 },
 {
     "name": "Amulet of the Black Skull",
     "type": "Wondrous",
-    "rarity": "Very Rare"
+    "rarity": "Very Rare",
+    "attunement": "Yes",
+    "charges": "Yes"
 },
 {
     "name": "Adamantine Armor",
     "type": "Armor",
-    "rarity": "Uncommon"
+    "rarity": "Uncommon",
+    "attunement": "No",
+    "charges": "No"
 },
 {
     "name": "Arrow-Catching Shield",
     "type": "Armor",
-    "rarity": "Rare"
+    "rarity": "Rare",
+    "attunement": "Yes",
+    "charges": "No"
 }];
 
+
 createList(list);
-activateCollapsible();

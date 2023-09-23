@@ -8,7 +8,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import { insertItem, searchItems } from "./database.js";
-import{capitalizeWords} from "./supportFunctions.js";
+import { capitalizeWords } from "./supportFunctions.js";
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -83,22 +83,20 @@ app.get('/style', (req, res) => {
 
 app.post('/itemSearch', (req, res) => {
   console.log(req.body);
-  console.log(req.body.name)
+  console.log(req.body.name);
+  insertItem(req.body.name.toLowerCase(), req.body.type.toLowerCase(), req.body.rarity.toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase());
   if (req.body.name != ' ') {
     let items = searchItems(req.body.name.toLowerCase());
-    if (items.length == 0){
+    if (items.length == 0) {
       return res.send("null");
     }
     console.log("\n");
     console.log(items);
-  }else{
+    return res.send(items);
+  } else {
     console.log("No name");
     return res.send("null");
   }
-  /*
-  insertItem(req.body.name, req.body.type, req.body.rarity);
-  */
-
 });
 
 

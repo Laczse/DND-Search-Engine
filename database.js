@@ -1,7 +1,7 @@
 import fs from 'fs';
 import Database from 'better-sqlite3';
 
-export{insertItem, searchItems};
+export { insertItem, searchItems };
 
 const db_path = './data.db';
 const db = connectDB();
@@ -23,14 +23,20 @@ function connectDB() {
 };
 
 function insertItem(name, type, rarity, attunement, charges) {
-    const insert = db.prepare('INSERT INTO items(name,type,rarity) VALUES (?,?,?,?,?)');
+    const insert = db.prepare('INSERT INTO items(name,type,rarity,attunement,charges) VALUES (?,?,?,?,?)');
     insert.run(name, type, rarity, attunement, charges);
 }
 
 function searchItems(itemName) {
-    const stmt = db.prepare('SELECT * FROM items WHERE name = ?');
-    const itemSearch = stmt.all(itemName);
+    let searchName = '%' + itemName + '%';
+    const stmt = db.prepare('SELECT * FROM items WHERE name LIKE ?');
+    const itemSearch = stmt.all(searchName);
     return itemSearch;
-    
-  };
 
+};
+
+function printDB() {
+    const stmt = db.prepare('SELECT * FROM items');
+    console.log("Printing DB \n");
+    console.log(stmt);
+}
