@@ -84,7 +84,6 @@ app.get('/style', (req, res) => {
 app.post('/itemSearch', (req, res) => {
   console.log(req.body);
   console.log(req.body.name);
-  insertItem(req.body.name.toLowerCase(), req.body.type.toLowerCase(), req.body.rarity.toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase());
   if (req.body.name != ' ') {
     let items = searchItems(req.body.name.toLowerCase());
     if (items.length == 0) {
@@ -105,6 +104,14 @@ app.post('/onLoadItemSearch', (req, res) => {
     console.log(items);
     return res.send(items);
   }
+);
+
+app.post('/newItem', (req, res) => {
+  console.log(req.body);
+  console.log(req.body.name);
+  insertItem(req.body.name.toLowerCase(), req.body.type.toLowerCase(), req.body.rarity.toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase(), req.body.description);
+  return res.sendStatus(200);
+}
 );
 
 

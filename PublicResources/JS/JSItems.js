@@ -51,7 +51,7 @@ function createList(list) {
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
-        let divContent = list[i].type + ', ' + list[i].rarity + '<br>' + list[i].text;
+        let divContent = list[i].type + ', ' + list[i].rarity + '<br>' + list[i].description;
         console.log(divContent);
         divElement.innerHTML = divContent;
         divElement.className = 'content';
@@ -130,7 +130,29 @@ async function onLoad() {
         .then(json => createList(json))
 }
 
+async function fillDB(list){
+    let i;
+    for (i = 0; i < list.length; i++) {
+        let searchObject = JSON.stringify({
+            "name": list[i].name,
+            "type": list[i].type,
+            "rarity": list[i].rarity,
+            "attunement": list[i].attunement,
+            "charges": list[i].charges,
+            "description": list[i].description
+        });
 
+        await fetch('newItem', {
+            method: 'POST',
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: searchObject
+        }
+        )
+    }
+}
 
 
 let list = [{
@@ -139,35 +161,40 @@ let list = [{
     "rarity": "Rare",
     "attunement": "Yes",
     "charges": "No",
-    "text": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword."
+    "description": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword."
 },
 {
     "name": "Alchemy Jug",
     "type": "Wondrous",
     "rarity": "Uncommon",
     "attunement": "No",
-    "charges": "No"
+    "charges": "No",
+    "description": "Test 1"
 },
 {
     "name": "Amulet of the Black Skull",
     "type": "Wondrous",
     "rarity": "Very Rare",
     "attunement": "Yes",
-    "charges": "Yes"
+    "charges": "Yes",
+    "description": "Test 2"
 },
 {
     "name": "Adamantine Armor",
     "type": "Armor",
     "rarity": "Uncommon",
     "attunement": "No",
-    "charges": "No"
+    "charges": "No",
+    "description": "Test 3"
 },
 {
     "name": "Arrow-Catching Shield",
     "type": "Armor",
     "rarity": "Rare",
     "attunement": "Yes",
-    "charges": "No"
+    "charges": "No",
+    "description": "Test 4"
 }];
 
+//fillDB(list);
 onLoad();
