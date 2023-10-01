@@ -47,11 +47,11 @@ function createList(list) {
         let spaceName = 200 - getTextWidth(list[i].name);
         let spaceType = 225 - getTextWidth(list[i].type);
         let spaceRarity = 200 - getTextWidth(list[i].rarity);
-        collapsibleButton.innerHTML = '<span style="padding-right: ' + spaceName + 'px">' + list[i].name + '</span><span style="padding-right: ' + spaceType + 'px">' + list[i].type + '</span><span style="padding-right: ' + spaceRarity + 'px">' + list[i].rarity + '</span>';
+        collapsibleButton.innerHTML = '<span style="padding-right: ' + spaceName + 'px">' + capitalizeWords(list[i].name) + '</span><span style="padding-right: ' + spaceType + 'px">' + capitalizeWords(list[i].type) + '</span><span style="padding-right: ' + spaceRarity + 'px">' + capitalizeWords(list[i].rarity) + '</span>';
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
-        let divContent = list[i].type + ', ' + list[i].rarity + '<br>' + list[i].description;
+        let divContent = capitalizeWords(list[i].type) + ', ' + capitalizeWords(list[i].rarity) + '<br>' + capitalizeFirstWord(list[i].description);
         console.log(divContent);
         divElement.innerHTML = divContent;
         divElement.className = 'content';
@@ -154,6 +154,26 @@ async function fillDB(list){
     }
 }
 
+
+function capitalizeWords(str){
+    const arr = str.split(" ");
+
+    //loop through each element of the array and capitalize the first letter.
+    for (var i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+
+    }
+    //Join all the elements of the array back into a string 
+    //using a blankspace as a separator 
+    const str2 = arr.join(" ");
+    console.log(str2);
+    return str2;
+}
+
+function capitalizeFirstWord(str){
+str = str.charAt(0).toUpperCase() + str.slice(1);
+return str;
+}
 
 let list = [{
     "name": "Flame Tongue",
