@@ -47,7 +47,7 @@ function createList(list) {
         let spaceName = 200 - getTextWidth(list[i].name);
         let spaceType = 225 - getTextWidth(list[i].type);
         let spaceRarity = 200 - getTextWidth(list[i].rarity);
-        collapsibleButton.innerHTML = '<span style="padding-right: ' + spaceName + 'px">' + capitalizeWords(list[i].name) + '</span><span style="padding-right: ' + spaceType + 'px">' + capitalizeWords(list[i].type) + '</span><span style="padding-right: ' + spaceRarity + 'px">' + capitalizeWords(list[i].rarity) + '</span>';
+        collapsibleButton.innerHTML = '<span style="color:' + setTextColor(list[i].rarity) +';padding-right: ' + spaceName + 'px">' + capitalizeWords(list[i].name) + '</span><span style="padding-right: ' + spaceType + 'px">' + capitalizeWords(list[i].type) + '</span><span style="padding-right: ' + spaceRarity + 'px">' + capitalizeWords(list[i].rarity) + '</span>';
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
@@ -168,6 +168,37 @@ function capitalizeWords(str){
     const str2 = arr.join(" ");
     console.log(str2);
     return str2;
+}
+
+function setTextColor(str){
+let color;
+
+switch(str){
+    case 'common':
+        color = 'white';
+        break;
+    case 'uncommon':
+        color = 'springgreen';
+        break;
+    case 'rare':
+        color = 'deepskyblue';
+        break;
+    case 'very rare':
+        color = 'magenta';
+        break;
+    case 'legendary':
+        color = 'orange';
+        break;
+    case 'artifact':
+        color = 'peru';
+        break;
+    default:
+        color = 'white';
+        break;
+
+}
+console.log(color);
+return color;
 }
 
 
