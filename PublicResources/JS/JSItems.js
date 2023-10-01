@@ -51,7 +51,7 @@ function createList(list) {
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
-        let divContent = capitalizeWords(list[i].type) + ', ' + capitalizeWords(list[i].rarity) + '<br>' + capitalizeFirstWord(list[i].description);
+        let divContent = capitalizeWords(list[i].type) + ', ' + capitalizeWords(list[i].rarity) + '<br>' + list[i].description;
         console.log(divContent);
         divElement.innerHTML = divContent;
         divElement.className = 'content';
@@ -170,10 +170,6 @@ function capitalizeWords(str){
     return str2;
 }
 
-function capitalizeFirstWord(str){
-str = str.charAt(0).toUpperCase() + str.slice(1);
-return str;
-}
 
 let list = [{
     "name": "Flame Tongue",
