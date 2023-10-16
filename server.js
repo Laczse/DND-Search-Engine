@@ -37,6 +37,18 @@ app.get('/creatures.html', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/html/creatures.html");
 });
 
+app.get('/createItem.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/CreateItem.html");
+});
+
+app.get('/createCreature.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/CreateCreature.html");
+});
+
+app.get('/createSpell.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/CreateSpell.html");
+});
+
 app.get('/jsItems.js', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/js/jsItems.js");
 });
@@ -120,6 +132,3 @@ app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 
-
-
-//Test for Maya
