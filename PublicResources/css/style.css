@@ -32,4 +32,31 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: #f1f1f1;
+
+    .span{
+      display:inline-block;
+      width: 200px;
+    }
   }
+
+  .orders {
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.orders span{
+display:inline-block;
+width: 300px;
+}
+
+.indexbutton{
+  margin: 3px;
+}
+
+.input{
+  margin-left: 3px;
+}
+
+.margin{
+  margin-left: 3px;
+}

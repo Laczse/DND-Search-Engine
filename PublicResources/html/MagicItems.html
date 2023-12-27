@@ -18,8 +18,7 @@
 <body>
 
 
-  <button class="indexbutton" type="button" name="Main.html" onclick="location.href='main.html'">Return to main
-    page</button>
+  <button class="indexbutton" type="button" name="Main.html" onclick="location.href='main.html'">Return to main page</button>
   <br>
   <button class="indexbutton" type="button" name="Spells" onclick="location.href='spells.html'">Spells</button>
   <br>
@@ -34,17 +33,17 @@
 
 
 
-    <label for="itemname" class="col-3">Item name:</label>
+    <label for="itemname" class="col-3 margin">Item name:</label>
     <span style="margin: 0 71px"></span>
-    <label for="type" class="col-3">Item type:</label>
+    <label for="type" class="col-3 margin">Item type:</label>
     <span style="margin: 0 75px"></span>
-    <label for="rarity" class="col-3">Item rarity:</label>
+    <label for="rarity" class="col-3 margin">Item rarity:</label>
     <br>
     <input type="text" id="itemName" name="itemName">
 
     <span style="margin: 0 10px"></span>
 
-    <select data-placeholder="Choose type" class="chosen-select" multiple tabindex="4" id="type">
+    <select data-placeholder="Choose type" class="chosen-select margin" multiple tabindex="4" id="type">
       <option value="Armor">Armor</option>
       <option value="Potion">Potion</option>
       <option value="Ring">Ring</option>
@@ -67,7 +66,7 @@
     </select>
 
     <br>
-    <label for="attunement" class="col-3">Attunement:</label>
+    <label for="attunement" class="col-3 margin">Attunement:</label>
     <span style="margin: 0 67px"></span>
     <label for="charges" class="col-3">Charges:</label>
     <br>
@@ -80,7 +79,7 @@
 
     <span style="margin: 0 10px"></span>
 
-    <select data-placeholder="Has charges" class="chosen-select" tabindex="-1" id="charges">
+    <select data-placeholder="Has charges" class="chosen-select margin" tabindex="-1" id="charges">
       <option value="">-</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
@@ -88,20 +87,20 @@
 
 
     <br><br>
-    <button type="button" id="submit">Submit</button>
-    <button type="button" id="change">Toggle</button>
+    <button type="button" id="submit" class="indexbutton">Submit</button>
+    <button type="button" id="change" class="indexbutton">Toggle</button>
   </form>
 
   <br><br>
 
-  <label for="sortName" class="col-3">Name</label>
-  <button type="button" id="sortName"> <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10"></button>
+  <label for="sortName" class="col-3 margin">Name</label>
+  <button type="button" id="sortName" class="indexbutton"> <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10"></button>
   <span style="margin: 0 71px"></span>
-  <label for="sortType" class="col-3">Type</label>
-  <button type="button" id="sortType"> <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10"></button>
+  <label for="sortType" class="col-3 margin">Type</label>
+  <button type="button" id="sortType" class="indexbutton"> <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10"></button>
   <span style="margin: 0 75px"></span>
-  <label for="sortRarity" class="col-3">Rarity</label>
-  <button type="button" id="sortType"> <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10"></button>
+  <label for="sortRarity" class="col-3 margin">Rarity</label>
+  <button type="button" id="sortType" class="indexbutton"> <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10"></button>
   <br><br>
 
   

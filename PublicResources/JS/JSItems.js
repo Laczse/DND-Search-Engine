@@ -44,10 +44,7 @@ function createList(list) {
     let i;
     for (i = 0; i < list.length; i++) {
         let collapsibleButton = document.createElement('button');
-        let spaceName = 200 - getTextWidth(list[i].name);
-        let spaceType = 225 - getTextWidth(list[i].type);
-        let spaceRarity = 200 - getTextWidth(list[i].rarity);
-        collapsibleButton.innerHTML = '<span style="color:' + setTextColor(list[i].rarity) +';padding-right: ' + spaceName + 'px">' + capitalizeWords(list[i].name) + '</span><span style="padding-right: ' + spaceType + 'px">' + capitalizeWords(list[i].type) + '</span><span style="padding-right: ' + spaceRarity + 'px">' + capitalizeWords(list[i].rarity) + '</span>';
+        collapsibleButton.innerHTML = '<div class=orders><span style="color:' + setTextColor(list[i].rarity) +';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span></div>';
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
