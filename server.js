@@ -49,6 +49,10 @@ app.get('/createSpell.html', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/html/spell/CreateSpell.html");
 });
 
+app.get('/monsterStatBlock.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/creature/monsterStatBlock.html");
+});
+
 app.get('/jsItems.js', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/js/jsItems.js");
 });
@@ -93,8 +97,16 @@ app.get('/sortingArrows', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/icons/sortingArrows.png");
 });
 
+app.get('/ogre', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/icons/ogre.png");
+});
+
 app.get('/style', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/css/style.css");
+});
+
+app.get('/monsterStatBlock.css', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/css/monsterStatBlock.css");
 });
 
 app.post('/itemSearch', (req, res) => {
