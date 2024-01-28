@@ -53,6 +53,10 @@ app.get('/jsItems.js', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/js/jsItems.js");
 });
 
+app.get('/jsNewItem.js', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/js/JSNewItem.js");
+});
+
 app.get('/chosen/chosen.css', (req, res) => {
   res.sendFile(rootFileSystem + "/chosen/chosen.css");
 });
@@ -121,7 +125,8 @@ app.post('/onLoadItemSearch', (req, res) => {
 app.post('/newItem', (req, res) => {
   console.log(req.body);
   console.log(req.body.name);
-  insertItem(req.body.name.toLowerCase(), req.body.type.toLowerCase(), req.body.rarity.toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase(), req.body.description);
+  console.log(req.body.type);
+  insertItem(req.body.name.toLowerCase(), req.body.type[0].toLowerCase(), req.body.rarity[0].toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase(), req.body.description);
   return res.sendStatus(200);
 }
 );

@@ -76,15 +76,6 @@ function activateCollapsible() {
     }
 }
 
-function getTextWidth(text) {
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-
-    context.font = getComputedStyle(document.body).font;
-
-    return context.measureText(text).width;
-}
-
 function deleteCollapsible() {
     let coll = document.getElementsByClassName("collapsible");
     let repeats = coll.length;
