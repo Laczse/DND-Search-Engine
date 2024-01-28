@@ -26,27 +26,27 @@ app.get('/main.html', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/html/main.html");
 });
 app.get('/magicItems.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/publicResources/html/magicItems.html");
+  res.sendFile(rootFileSystem + "/publicResources/html/item/magicItems.html");
 });
 
 app.get('/spells.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/publicResources/html/spells.html");
+  res.sendFile(rootFileSystem + "/publicResources/html/spell/spells.html");
 });
 
 app.get('/creatures.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/publicResources/html/creatures.html");
+  res.sendFile(rootFileSystem + "/publicResources/html/creature/creatures.html");
 });
 
 app.get('/createItem.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/publicResources/html/CreateItem.html");
+  res.sendFile(rootFileSystem + "/publicResources/html/item/CreateItem.html");
 });
 
 app.get('/createCreature.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/publicResources/html/CreateCreature.html");
+  res.sendFile(rootFileSystem + "/publicResources/html/creature/CreateCreature.html");
 });
 
 app.get('/createSpell.html', (req, res) => {
-  res.sendFile(rootFileSystem + "/publicResources/html/CreateSpell.html");
+  res.sendFile(rootFileSystem + "/publicResources/html/spell/CreateSpell.html");
 });
 
 app.get('/jsItems.js', (req, res) => {
