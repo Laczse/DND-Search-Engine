@@ -19,6 +19,7 @@ async function handleSubmit() {
     console.log(type);
     console.log(rarity);
 
+    deleteCollapsible();
     let searchObject = JSON.stringify({
         "name": name,
         "type": type,
@@ -36,8 +37,8 @@ async function handleSubmit() {
         body: searchObject
     }
     )
-        .then(response => response.text())
-        .then(text => console.log("Test \n" + text))
+    .then(response => response.json())
+    .then(json => createList(json))
 };
 
 function createList(list) {
