@@ -1,0 +1,43 @@
+Work Tasks
+
+General:
+
+Items:
+Add image to collapsible
+Implement excpanding section design
+Implement sorting by name, type, rartity
+Implement searching by name, type, rarity, attunement, charges.
+
+
+Spells:
+Set up the relevant search fields
+Set up the search function on frontend
+Set up the search function on backend
+Create table for spells in database.js
+Create the following functions in database.js:
+insertSpell
+searchSpells
+getAllSpells
+
+Set up collapsible
+Add image to collapsible
+Implement excpanding section design
+
+Creature:
+Set up the relevant search fields
+Set up the search function on frontend
+Set up the search function on backend
+Create table for creatures in database.js
+Create the following functions in database.js:
+insertCreature
+searchCreatures
+getAllCreatures
+
+
+Add image to collapsible
+Implement excpanding section design
+Find out how to autogenerate the monsterStatBlock.html
+Find out how to insert the monsterStatBlock.html in the expanded section of the collapsible
+
+
+
