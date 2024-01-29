@@ -2,9 +2,6 @@
 let submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", handleSubmit);
 
-let contentButton = document.getElementById("change");
-contentButton.addEventListener("click", toggleCollapsible);
-
 let nameButton = document.getElementById("sortName");
 nameButton.addEventListener("click", sortByName);
 
@@ -111,16 +108,6 @@ function deleteCollapsible() {
     }
 }
 
-function toggleCollapsible() {
-    if (visible == true) {
-        console.log("Deleting elements");
-        deleteCollapsible();
-    } else {
-        console.log("Creating elements");
-        createList(list);
-    }
-    visible = visible * -1;
-}
 
 async function onLoad() {
     console.log(list);
