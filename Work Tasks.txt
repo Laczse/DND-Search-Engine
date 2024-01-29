@@ -4,10 +4,10 @@ General:
 
 Items:
 Add image to collapsible
-Implement excpanding section design
+Implement expanding section design
 Make createList write message if parsed an empty list
-Add reset filter button
 Add edit button to collapsible
+Implement edit page/functionality
 
 
 Spells:
@@ -22,7 +22,9 @@ getAllSpells
 
 Set up collapsible
 Add image to collapsible
-Implement excpanding section design
+Add edit button to collapsible
+Implement edit page/functionality
+Implement expanding section design
 
 Creature:
 Set up the relevant search fields
@@ -36,9 +38,11 @@ getAllCreatures
 
 
 Add image to collapsible
-Implement excpanding section design
+Implement expanding section design
 Find out how to autogenerate the monsterStatBlock.html
 Find out how to insert the monsterStatBlock.html in the expanded section of the collapsible
+Add edit button to collapsible
+Implement edit page/functionality
 
 
 
