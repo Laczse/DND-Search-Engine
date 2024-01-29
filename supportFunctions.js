@@ -19,22 +19,46 @@ function capitalizeWords(str) {
 
 
 function filterByType(items, types) {
-    let filteredItems;
-
-    return filteredItems;
+    if(items.length != 0){
+        console.log(types);
+        let filteredItems = [];
+        if(types.length != 0){
+            items.forEach((element) => {
+                types.forEach((type) => {
+                if(element.type == type.toLowerCase()){
+                    filteredItems.push(element); 
+                }
+                });
+            });
+            return filteredItems;
+        }
+    }    
+    return items;
 }
 
 function filterByRarity(items, rarities) {
-    let filteredItems;
-
-    return filteredItems;
+    if(items.length != 0){
+        console.log(rarities);
+        let filteredItems = [];
+        if(rarities.length != 0){
+            items.forEach((element) => {
+                rarities.forEach((rarity) => {
+                if(element.rarity == rarity.toLowerCase()){
+                    filteredItems.push(element); 
+                }
+                });
+            });
+            return filteredItems;
+        }
+    }    
+    return items;
 }
 
 function filterByCharges(items, charges) {
     if(items.length != 0){
         console.log(charges);
         let filteredItems = [];
-        if(charges != null){
+        if(charges != ''){
             items.forEach((element) => {
                 if(element.charges == charges){
                     filteredItems.push(element); 
@@ -52,7 +76,7 @@ function filterByCharges(items, charges) {
 function filterByAttunement(items, attunement) {
     if(items.length != 0){
         let filteredItems  = [];
-        if(attunement != null){
+        if(attunement != ''){
             items.forEach(element => {
                 if(element.attunement == attunement){
                     filteredItems.push(element);

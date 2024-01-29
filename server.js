@@ -124,24 +124,11 @@ app.post('/itemSearch', (req, res) => {
     items = getAllItems();
   }
 
-  //console.log("Before type filter")
-  //console.log(items);
-  //items = filterByType(items, req.body.type);
-  
-  //console.log("Before rarity filter")
-  //console.log(items);
-  //items = filterByRarity(items, req.body.rarity);
-  
-  console.log("Before charge filter")
-  console.log(items);
+  items = filterByType(items, req.body.type);
+  items = filterByRarity(items, req.body.rarity);
   items = filterByCharges(items, req.body.charges.toLowerCase());
-
-  console.log("Before attunement filter")
-  console.log(items);
   items = filterByAttunement(items, req.body.attunement.toLowerCase());
-  
-  console.log("Before returning filtered list");
-  console.log(items);
+
   return res.send(items);
 });
 
