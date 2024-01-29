@@ -5,7 +5,19 @@ submitButton.addEventListener("click", handleSubmit);
 let contentButton = document.getElementById("change");
 contentButton.addEventListener("click", toggleCollapsible);
 
+let nameButton = document.getElementById("sortName");
+nameButton.addEventListener("click", sortByName);
+
+let typeButton = document.getElementById("sortType");
+typeButton.addEventListener("click", sortByType);
+
+let rarityButton = document.getElementById("sortRarity");
+rarityButton.addEventListener("click", sortByRarity);
+
+let currentList ;
+
 let visible = true;
+
 
 async function handleSubmit() {
 
@@ -18,8 +30,6 @@ async function handleSubmit() {
     console.log(name);
     console.log(type);
     console.log(rarity);
-
-    deleteCollapsible();
     let searchObject = JSON.stringify({
         "name": name,
         "type": type,
@@ -38,10 +48,14 @@ async function handleSubmit() {
     }
     )
     .then(response => response.json())
-    .then(json => createList(json))
+    .then(json => currentList = json)
+    createList(currentList)
+    console.log("Testing");
+    console.log(currentList);
 };
 
 function createList(list) {
+    deleteCollapsible();
     let i;
     for (i = 0; i < list.length; i++) {
         let collapsibleButton = document.createElement('button');
@@ -116,7 +130,8 @@ async function onLoad() {
     }
     )
         .then(response => response.json())
-        .then(json => createList(json))
+        .then(json => currentList = json)
+        createList(currentList);
 }
 
 async function fillDB(list){
@@ -143,6 +158,73 @@ async function fillDB(list){
     }
 }
 
+
+function sortByName(){
+    currentList.sort(function (a, b) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
+      console.log(currentList);
+      createList(currentList);
+}
+
+function sortByType(){
+    currentList.sort(function (a, b) {
+        if (a.type < b.type) {
+          return -1;
+        }
+        if (a.type > b.type) {
+          return 1;
+        }
+        return 0;
+      });
+      console.log(currentList);
+      createList(currentList);
+}
+
+function sortByRarity(){
+    currentList.sort(function (a, b) {
+        if (rarityToNumber(a.rarity) < rarityToNumber(b.rarity)) {
+          return -1;
+        }
+        if (rarityToNumber(a.rarity) > rarityToNumber(b.rarity)) {
+          return 1;
+        }
+        return 0;
+      });
+      console.log("Testing");
+      console.log(currentList);
+      createList(currentList);
+}
+
+
+function rarityToNumber(rarity){
+    console.log(rarity);
+    switch(rarity){
+        case 'common':
+            return 0;
+        case 'uncommon':
+            return 1;
+        case 'rare':
+            return 2;
+        case 'very rare':
+            return 3;
+        case 'legendary':
+            return 4;
+        case 'artifact':
+            return 5;
+        case 'varies':
+            return 6;
+        default:
+            return 7;
+    }
+
+}
 
 function capitalizeWords(str){
     const arr = str.split(" ");
