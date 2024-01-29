@@ -5,9 +5,9 @@ General:
 Items:
 Add image to collapsible
 Implement excpanding section design
-Implement sorting by name, type, rartity in opposite order
 Make createList write message if parsed an empty list
-
+Add reset filter button
+Add edit button to collapsible
 
 
 Spells:

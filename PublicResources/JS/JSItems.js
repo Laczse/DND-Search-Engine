@@ -18,6 +18,8 @@ let currentList;
 
 let visible = true;
 
+let sortedBy;
+
 
 async function handleSubmit() {
 
@@ -165,7 +167,11 @@ async function fillDB(list) {
 
 
 function sortByName() {
-    currentList.sort(function (a, b) {
+    if(sortedBy == "name"){
+        currentList.reverse()
+    }else{
+        sortedBy = "name";
+        currentList.sort(function (a, b) {
         if (a.name < b.name) {
             return -1;
         }
@@ -174,11 +180,15 @@ function sortByName() {
         }
         return 0;
     });
-    console.log(currentList);
+    }
     createList(currentList);
 }
 
 function sortByType() {
+    if(sortedBy == "type"){
+        currentList.reverse()
+    }else{
+        sortedBy = "type";
     currentList.sort(function (a, b) {
         if (a.type < b.type) {
             return -1;
@@ -188,11 +198,15 @@ function sortByType() {
         }
         return 0;
     });
-    console.log(currentList);
+    }
     createList(currentList);
 }
 
 function sortByRarity() {
+    if(sortedBy == "rarity"){
+        currentList.reverse()
+    }else{
+        sortedBy = "rarity";
     currentList.sort(function (a, b) {
         if (rarityToNumber(a.rarity) < rarityToNumber(b.rarity)) {
             return -1;
@@ -202,8 +216,7 @@ function sortByRarity() {
         }
         return 0;
     });
-    console.log("Testing");
-    console.log(currentList);
+    }
     createList(currentList);
 }
 
