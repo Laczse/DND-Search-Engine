@@ -2,6 +2,9 @@
 let submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", handleSubmit);
 
+let resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", reload);
+
 let nameButton = document.getElementById("sortName");
 nameButton.addEventListener("click", sortByName);
 
@@ -51,11 +54,10 @@ async function handleSubmit() {
     .catch((error) => {
 		throw error;
 	});
-        createList(currentList)
-        console.log("Testing");
-        console.log(currentList);
 
-    
+    createList(currentList)
+    console.log("Testing");
+    console.log(currentList);
 };
 
 function createList(list) {
@@ -275,6 +277,10 @@ function setTextColor(str) {
     }
     console.log(color);
     return color;
+}
+
+function reload(){
+    location.reload();
 }
 
 
