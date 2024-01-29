@@ -35,7 +35,7 @@ function searchItems(itemName) {
 
 };
 
-function getAllItems(){
+function getAllItems() {
     const stmt = db.prepare('SELECT * FROM items');
     const itemSearch = stmt.all();
     return itemSearch;

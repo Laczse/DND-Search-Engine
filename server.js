@@ -112,8 +112,9 @@ app.get('/monsterStatBlock.css', (req, res) => {
 app.post('/itemSearch', (req, res) => {
   console.log(req.body);
   console.log(req.body.name);
+  let items;
   if (req.body.name != ' ') {
-    let items = searchItems(req.body.name.toLowerCase());
+    items = searchItems(req.body.name.toLowerCase());
     if (items.length == 0) {
       return res.send("null");
     }
@@ -121,17 +122,25 @@ app.post('/itemSearch', (req, res) => {
     console.log(items);
     return res.send(items);
   } else {
-    console.log("No name");
-    return res.send("null");
+    items = getAllItems();
   }
+
+  items = filterByType(items);
+  items = filterByRarity(items);
+  items = filterByCharges(items);
+  items = filterByAttunement(items);
+
+
+
+
 });
 
 app.post('/onLoadItemSearch', (req, res) => {
-    let items = getAllItems();
-    console.log("\n");
-    console.log(items);
-    return res.send(items);
-  }
+  let items = getAllItems();
+  console.log("\n");
+  console.log(items);
+  return res.send(items);
+}
 );
 
 app.post('/newItem', (req, res) => {

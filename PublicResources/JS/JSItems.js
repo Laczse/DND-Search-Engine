@@ -14,7 +14,7 @@ typeButton.addEventListener("click", sortByType);
 let rarityButton = document.getElementById("sortRarity");
 rarityButton.addEventListener("click", sortByRarity);
 
-let currentList ;
+let currentList;
 
 let visible = true;
 
@@ -47,8 +47,8 @@ async function handleSubmit() {
         body: searchObject
     }
     )
-    .then(response => response.json())
-    .then(json => currentList = json)
+        .then(response => response.json())
+        .then(json => currentList = json)
     createList(currentList)
     console.log("Testing");
     console.log(currentList);
@@ -59,7 +59,7 @@ function createList(list) {
     let i;
     for (i = 0; i < list.length; i++) {
         let collapsibleButton = document.createElement('button');
-        collapsibleButton.innerHTML = '<div class=orders><span style="color:' + setTextColor(list[i].rarity) +';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span></div>';
+        collapsibleButton.innerHTML = '<div class=orders><span style="color:' + setTextColor(list[i].rarity) + ';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span></div>';
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
@@ -131,10 +131,10 @@ async function onLoad() {
     )
         .then(response => response.json())
         .then(json => currentList = json)
-        createList(currentList);
+    createList(currentList);
 }
 
-async function fillDB(list){
+async function fillDB(list) {
     let i;
     for (i = 0; i < list.length; i++) {
         let searchObject = JSON.stringify({
@@ -159,53 +159,53 @@ async function fillDB(list){
 }
 
 
-function sortByName(){
+function sortByName() {
     currentList.sort(function (a, b) {
         if (a.name < b.name) {
-          return -1;
+            return -1;
         }
         if (a.name > b.name) {
-          return 1;
+            return 1;
         }
         return 0;
-      });
-      console.log(currentList);
-      createList(currentList);
+    });
+    console.log(currentList);
+    createList(currentList);
 }
 
-function sortByType(){
+function sortByType() {
     currentList.sort(function (a, b) {
         if (a.type < b.type) {
-          return -1;
+            return -1;
         }
         if (a.type > b.type) {
-          return 1;
+            return 1;
         }
         return 0;
-      });
-      console.log(currentList);
-      createList(currentList);
+    });
+    console.log(currentList);
+    createList(currentList);
 }
 
-function sortByRarity(){
+function sortByRarity() {
     currentList.sort(function (a, b) {
         if (rarityToNumber(a.rarity) < rarityToNumber(b.rarity)) {
-          return -1;
+            return -1;
         }
         if (rarityToNumber(a.rarity) > rarityToNumber(b.rarity)) {
-          return 1;
+            return 1;
         }
         return 0;
-      });
-      console.log("Testing");
-      console.log(currentList);
-      createList(currentList);
+    });
+    console.log("Testing");
+    console.log(currentList);
+    createList(currentList);
 }
 
 
-function rarityToNumber(rarity){
+function rarityToNumber(rarity) {
     console.log(rarity);
-    switch(rarity){
+    switch (rarity) {
         case 'common':
             return 0;
         case 'uncommon':
@@ -226,7 +226,7 @@ function rarityToNumber(rarity){
 
 }
 
-function capitalizeWords(str){
+function capitalizeWords(str) {
     const arr = str.split(" ");
 
     //loop through each element of the array and capitalize the first letter.
@@ -241,35 +241,35 @@ function capitalizeWords(str){
     return str2;
 }
 
-function setTextColor(str){
-let color;
+function setTextColor(str) {
+    let color;
 
-switch(str){
-    case 'common':
-        color = 'white';
-        break;
-    case 'uncommon':
-        color = 'springgreen';
-        break;
-    case 'rare':
-        color = 'deepskyblue';
-        break;
-    case 'very rare':
-        color = 'magenta';
-        break;
-    case 'legendary':
-        color = 'orange';
-        break;
-    case 'artifact':
-        color = 'peru';
-        break;
-    default:
-        color = 'white';
-        break;
+    switch (str) {
+        case 'common':
+            color = 'white';
+            break;
+        case 'uncommon':
+            color = 'springgreen';
+            break;
+        case 'rare':
+            color = 'deepskyblue';
+            break;
+        case 'very rare':
+            color = 'magenta';
+            break;
+        case 'legendary':
+            color = 'orange';
+            break;
+        case 'artifact':
+            color = 'peru';
+            break;
+        default:
+            color = 'white';
+            break;
 
-}
-console.log(color);
-return color;
+    }
+    console.log(color);
+    return color;
 }
 
 

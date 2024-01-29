@@ -5,7 +5,7 @@ General:
 Items:
 Add image to collapsible
 Implement excpanding section design
-Implement sorting by name, type, rartity
+Implement sorting by name, type, rartity in opposite order
 Implement searching by name, type, rarity, attunement, charges.
 
 

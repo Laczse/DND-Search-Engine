@@ -16,7 +16,7 @@ async function handleSubmit() {
     console.log(type);
     console.log(rarity);
 
-    if(name != null && type != null && rarity != null && attunement != null && charges != null && description != null && type.length == 1 && rarity.length == 1){
+    if (name != null && type != null && rarity != null && attunement != null && charges != null && description != null && type.length == 1 && rarity.length == 1) {
         let newItem = JSON.stringify({
             "name": name,
             "type": type,
@@ -37,7 +37,7 @@ async function handleSubmit() {
         )
             .then(response => response.text())
             .then(text => console.log("Test \n" + text))
-    } else{
+    } else {
         console.log("Please fill all the fields before submitting. Furthermore make sure you only select 1 rarity and 1 type.");
     }
 
