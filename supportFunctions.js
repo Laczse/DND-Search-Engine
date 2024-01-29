@@ -17,7 +17,6 @@ function capitalizeWords(str) {
 }
 
 
-
 function filterByType(items, types) {
     if(items.length != 0){
         console.log(types);
@@ -71,7 +70,6 @@ function filterByCharges(items, charges) {
     }    
     return items;
 }
-
 
 function filterByAttunement(items, attunement) {
     if(items.length != 0){
