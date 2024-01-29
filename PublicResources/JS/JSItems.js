@@ -47,11 +47,16 @@ async function handleSubmit() {
         body: searchObject
     }
     )
-        .then(response => response.json())
-        .then(json => currentList = json)
-    createList(currentList)
-    console.log("Testing");
-    console.log(currentList);
+    .then((res) => res.text())
+	.then((text) => text.length ? currentList = JSON.parse(text) : currentList = {})
+    .catch((error) => {
+		throw error;
+	});
+        createList(currentList)
+        console.log("Testing");
+        console.log(currentList);
+
+    
 };
 
 function createList(list) {

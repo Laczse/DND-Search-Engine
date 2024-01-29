@@ -6,7 +6,13 @@ Items:
 Add image to collapsible
 Implement excpanding section design
 Implement sorting by name, type, rartity in opposite order
-Implement searching by name, type, rarity, attunement, charges.
+Implement searching by name, type, rarity.
+Make createList write message if parsed an empty list
+
+
+Create the following functions:
+filterByType
+filterByRarity
 
 
 Spells:

@@ -8,7 +8,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import { insertItem, searchItems, getAllItems } from "./database.js";
-import { capitalizeWords } from "./supportFunctions.js";
+import { capitalizeWords, filterByType, filterByRarity, filterByCharges, filterByAttunement } from "./supportFunctions.js";
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -113,26 +113,36 @@ app.post('/itemSearch', (req, res) => {
   console.log(req.body);
   console.log(req.body.name);
   let items;
-  if (req.body.name != ' ') {
+  if (req.body.name != '') {
     items = searchItems(req.body.name.toLowerCase());
     if (items.length == 0) {
       return res.send("null");
     }
     console.log("\n");
     console.log(items);
-    return res.send(items);
   } else {
     items = getAllItems();
   }
 
-  items = filterByType(items);
-  items = filterByRarity(items);
-  items = filterByCharges(items);
-  items = filterByAttunement(items);
+  //console.log("Before type filter")
+  //console.log(items);
+  //items = filterByType(items, req.body.type);
+  
+  //console.log("Before rarity filter")
+  //console.log(items);
+  //items = filterByRarity(items, req.body.rarity);
+  
+  console.log("Before charge filter")
+  console.log(items);
+  items = filterByCharges(items, req.body.charges.toLowerCase());
 
-
-
-
+  console.log("Before attunement filter")
+  console.log(items);
+  items = filterByAttunement(items, req.body.attunement.toLowerCase());
+  
+  console.log("Before returning filtered list");
+  console.log(items);
+  return res.send(items);
 });
 
 app.post('/onLoadItemSearch', (req, res) => {

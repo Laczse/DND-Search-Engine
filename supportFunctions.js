@@ -1,5 +1,5 @@
 
-export { capitalizeWords };
+export { capitalizeWords, filterByType, filterByRarity, filterByCharges, filterByAttunement };
 
 function capitalizeWords(str) {
     const arr = str.split(" ");
@@ -18,24 +18,50 @@ function capitalizeWords(str) {
 
 
 
-function filterByType(items) {
+function filterByType(items, types) {
     let filteredItems;
 
     return filteredItems;
 }
 
-function filterByRarity(items) {
+function filterByRarity(items, rarities) {
     let filteredItems;
 
     return filteredItems;
 }
 
-function filterByCharges(items) {
-    let filteredItems;
-
-    return filteredItems;
+function filterByCharges(items, charges) {
+    if(items.length != 0){
+        console.log(charges);
+        let filteredItems = [];
+        if(charges != null){
+            items.forEach((element) => {
+                if(element.charges == charges){
+                    filteredItems.push(element); 
+                }
+            });
+            console.log("Before returning list filtered for charges")
+            console.log(filteredItems);
+            return filteredItems;
+        }
+    }    
+    return items;
 }
 
-function filterByAttunement(items) {
 
+function filterByAttunement(items, attunement) {
+    if(items.length != 0){
+        let filteredItems  = [];
+        if(attunement != null){
+            items.forEach(element => {
+                if(element.attunement == attunement){
+                    filteredItems.push(element);
+                }
+            });
+            console.log("Before returning list filtered for attunement")
+            console.log(filteredItems);
+            return filteredItems;
+        }
+        return items;
+    }
 }
