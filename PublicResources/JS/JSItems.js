@@ -65,7 +65,7 @@ function createList(list) {
     let i;
     for (i = 0; i < list.length; i++) {
         let collapsibleButton = document.createElement('button');
-        collapsibleButton.innerHTML = '<div class=orders><span style="color:' + setTextColor(list[i].rarity) + ';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span></div>';
+        collapsibleButton.innerHTML = '<div class=orders><img src="itemImages/weapon.jpg" width="35" height="35" style="padding: 0px 10px 0px 0px; vertical-align:middle"><span style="color:' + setTextColor(list[i].rarity) + ';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span></div>';
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
@@ -139,7 +139,8 @@ async function fillDB(list) {
             "rarity": list[i].rarity,
             "attunement": list[i].attunement,
             "charges": list[i].charges,
-            "description": list[i].description
+            "description": list[i].description,
+            "url": list[i].url
         });
 
         await fetch('newItem', {
@@ -290,7 +291,8 @@ let list = [{
     "rarity": "Rare",
     "attunement": "Yes",
     "charges": "No",
-    "description": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword."
+    "description": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.",
+    "url": "itemImages/weapon.jpg"
 },
 {
     "name": "Alchemy Jug",
@@ -298,7 +300,8 @@ let list = [{
     "rarity": "Uncommon",
     "attunement": "No",
     "charges": "No",
-    "description": "Test 1"
+    "description": "Test 1",
+    "url": "itemImages/wondrous.jpg"
 },
 {
     "name": "Amulet of the Black Skull",
@@ -306,7 +309,8 @@ let list = [{
     "rarity": "Very Rare",
     "attunement": "Yes",
     "charges": "Yes",
-    "description": "Test 2"
+    "description": "Test 2",
+    "url": "itemImages/wondrous.jpg"
 },
 {
     "name": "Adamantine Armor",
@@ -314,7 +318,8 @@ let list = [{
     "rarity": "Uncommon",
     "attunement": "No",
     "charges": "No",
-    "description": "Test 3"
+    "description": "Test 3",
+    "url": "itemImages/armor.jpg"
 },
 {
     "name": "Arrow-Catching Shield",
@@ -322,7 +327,8 @@ let list = [{
     "rarity": "Rare",
     "attunement": "Yes",
     "charges": "No",
-    "description": "Test 4"
+    "description": "Test 4",
+    "url": "itemImages/armor.jpg"
 }];
 
 //fillDB(list);

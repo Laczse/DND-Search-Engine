@@ -9,6 +9,7 @@ import bodyParser from 'body-parser';
 
 import { insertItem, searchItems, getAllItems } from "./database.js";
 import { capitalizeWords, filterByType, filterByRarity, filterByCharges, filterByAttunement } from "./supportFunctions.js";
+import e from 'express';
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -18,6 +19,9 @@ const rootFileSystem = process.cwd();
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use(express.static('publicResources'));
+//app.use('/itemImages', express.static('itemImages'));
 
 app.get('/', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/html/main.html");
@@ -144,7 +148,46 @@ app.post('/newItem', (req, res) => {
   console.log(req.body);
   console.log(req.body.name);
   console.log(req.body.type);
-  insertItem(req.body.name.toLowerCase(), req.body.type[0].toLowerCase(), req.body.rarity[0].toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase(), req.body.description);
+  let url;
+  if(req.body.url == null){
+    url = "itemImages/";
+    switch (req.body.type[0].toLowerCase()) {
+      case 'armor':
+        url = url.concat("armor.jpg");
+        break;
+      case 'potion':
+        url = url.concat("potion.jpg");
+        break;
+      case 'ring':
+        url = url.concat("ring.jpg");
+        break;
+      case 'rod':
+        url = url.concat("rod.jpg");
+        break;
+      case 'scroll':
+        url = url.concat("scroll.jpg");
+        break;
+      case 'staff':
+        url = url.concat("staff.jpg");
+        break;
+      case 'wand':
+        url = url.concat("wand.jpg");
+        break;
+      case 'weapon':
+        url = url.concat("weapon.jpg");
+        break;
+      case 'wondrous item':
+        url = url.concat("wondrousitem.jpg");
+        break;
+      default:
+        url = url.concat("wondrousitem.jpg");
+        break;
+    }
+  }else{
+    url = req.body.url;
+  }
+    
+  insertItem(req.body.name.toLowerCase(), req.body.type[0].toLowerCase(), req.body.rarity[0].toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase(), req.body.description, url);
   return res.sendStatus(200);
 }
 );

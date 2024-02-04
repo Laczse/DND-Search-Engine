@@ -15,16 +15,16 @@ function connectDB() {
     } else {
         const db = new Database('data.db');
         console.log("Database created");
-        const itemTable = db.prepare('CREATE TABLE items(id INTEGER PRIMARY KEY,name,type,rarity,attunement,charges,description)');
+        const itemTable = db.prepare('CREATE TABLE items(id INTEGER PRIMARY KEY,name,type,rarity,attunement,charges,description,url)');
         itemTable.run();
         console.log("Tables created");
         return db;
     };
 };
 
-function insertItem(name, type, rarity, attunement, charges, description) {
-    const insert = db.prepare('INSERT INTO items(name,type,rarity,attunement,charges,description) VALUES (?,?,?,?,?,?)');
-    insert.run(name, type, rarity, attunement, charges, description);
+function insertItem(name, type, rarity, attunement, charges, description, url) {
+    const insert = db.prepare('INSERT INTO items(name,type,rarity,attunement,charges,description,url) VALUES (?,?,?,?,?,?,?)');
+    insert.run(name, type, rarity, attunement, charges, description, url);
 }
 
 function searchItems(itemName) {

@@ -23,7 +23,8 @@ async function handleSubmit() {
             "rarity": rarity,
             "attunement": attunement,
             "charges": charges,
-            "description": description
+            "description": description,
+            "url": url
         });
         console.log(newItem);
         await fetch('newItem', {
