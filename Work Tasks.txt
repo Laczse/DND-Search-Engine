@@ -10,6 +10,9 @@ Implement edit page/functionality
 Implement uploading images for items
 Implement function to save table in db as json files
 Implement function to load json file and add to database
+Get + and - to be on same line as text in collapsible
+Get expanded section of collapsible to keep inside the collapsible
+Center input fields and buttons
 
 
 Spells:
