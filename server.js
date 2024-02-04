@@ -187,7 +187,7 @@ app.post('/newItem', (req, res) => {
     url = req.body.url;
   }
     
-  insertItem(req.body.name.toLowerCase(), req.body.type[0].toLowerCase(), req.body.rarity[0].toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase(), req.body.description, url);
+  insertItem(req.body.name.toLowerCase(), req.body.type.toLowerCase(), req.body.rarity.toLowerCase(), req.body.attunement.toLowerCase(), req.body.charges.toLowerCase(), req.body.description, url);
   return res.sendStatus(200);
 }
 );
