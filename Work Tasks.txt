@@ -3,11 +3,11 @@ Work Tasks
 General:
 
 Items:
-Set up dynamic images for items
 Implement expanding section design
 Make createList write message if parsed an empty list
 Add edit button to collapsible
 Implement edit page/functionality
+Implement uploading images for  items
 
 
 Spells:

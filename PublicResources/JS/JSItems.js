@@ -65,7 +65,7 @@ function createList(list) {
     let i;
     for (i = 0; i < list.length; i++) {
         let collapsibleButton = document.createElement('button');
-        collapsibleButton.innerHTML = '<div class=orders><img src="itemImages/weapon.jpg" width="35" height="35" style="padding: 0px 10px 0px 0px; vertical-align:middle"><span style="color:' + setTextColor(list[i].rarity) + ';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span></div>';
+        collapsibleButton.innerHTML = '<div class=orders><img src=" ' + list[i].url + '" width="35" height="35" style="padding: 0px 10px 0px 0px; vertical-align:middle"><span style="color:' + setTextColor(list[i].rarity) + ';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span></div>';
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
         let divElement = document.createElement('div');
@@ -301,7 +301,7 @@ let list = [{
     "attunement": "No",
     "charges": "No",
     "description": "Test 1",
-    "url": "itemImages/wondrous.jpg"
+    "url": "itemImages/wondrousitem.jpg"
 },
 {
     "name": "Amulet of the Black Skull",
@@ -309,8 +309,7 @@ let list = [{
     "rarity": "Very Rare",
     "attunement": "Yes",
     "charges": "Yes",
-    "description": "Test 2",
-    "url": "itemImages/wondrous.jpg"
+    "description": "Test 2"
 },
 {
     "name": "Adamantine Armor",
