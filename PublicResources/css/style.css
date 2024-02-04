@@ -31,6 +31,8 @@
 .content {
   padding: 0 18px;
   max-height: 0;
+  margin-left: 15%;
+  margin-right: 15%;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
@@ -39,6 +41,18 @@
     display: inline-block;
     width: 200px;
   }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100% ;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
 }
 
 .orders {
