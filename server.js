@@ -153,34 +153,34 @@ app.post('/newItem', (req, res) => {
     url = "itemImages/";
     switch (req.body.type.toLowerCase()) {
       case 'armor':
-        url = url.concat("armor.jpg");
+        url = url.concat("default/armor.jpg");
         break;
       case 'potion':
-        url = url.concat("potion.jpg");
+        url = url.concat("default/potion.jpg");
         break;
       case 'ring':
-        url = url.concat("ring.jpg");
+        url = url.concat("default/ring.jpg");
         break;
       case 'rod':
-        url = url.concat("rod.jpg");
+        url = url.concat("default/rod.jpg");
         break;
       case 'scroll':
-        url = url.concat("scroll.jpg");
+        url = url.concat("default/scroll.jpg");
         break;
       case 'staff':
-        url = url.concat("staff.jpg");
+        url = url.concat("default/staff.jpg");
         break;
       case 'wand':
-        url = url.concat("wand.jpg");
+        url = url.concat("default/wand.jpg");
         break;
       case 'weapon':
-        url = url.concat("weapon.jpg");
+        url = url.concat("default/weapon.jpg");
         break;
       case 'wondrous item':
-        url = url.concat("wondrousitem.jpg");
+        url = url.concat("default/wondrousitem.jpg");
         break;
       default:
-        url = url.concat("wondrousitem.jpg");
+        url = url.concat("default/wondrousitem.jpg");
         break;
     }
   }else{

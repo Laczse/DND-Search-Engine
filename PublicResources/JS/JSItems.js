@@ -292,7 +292,7 @@ let list = [{
     "attunement": "Yes",
     "charges": "No",
     "description": "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.",
-    "url": "itemImages/weapon.jpg"
+    "url": "itemImages/default/weapon.jpg"
 },
 {
     "name": "Alchemy Jug",
@@ -301,7 +301,7 @@ let list = [{
     "attunement": "No",
     "charges": "No",
     "description": "Test 1",
-    "url": "itemImages/wondrousitem.jpg"
+    "url": "itemImages/default/wondrousitem.jpg"
 },
 {
     "name": "Amulet of the Black Skull",
@@ -309,7 +309,8 @@ let list = [{
     "rarity": "Very Rare",
     "attunement": "Yes",
     "charges": "Yes",
-    "description": "Test 2"
+    "description": "Test 2",
+    "url": "itemImages/default/wondrousitem.jpg"
 },
 {
     "name": "Adamantine Armor",
@@ -318,7 +319,7 @@ let list = [{
     "attunement": "No",
     "charges": "No",
     "description": "Test 3",
-    "url": "itemImages/armor.jpg"
+    "url": "itemImages/default/armor.jpg"
 },
 {
     "name": "Arrow-Catching Shield",
@@ -327,7 +328,7 @@ let list = [{
     "attunement": "Yes",
     "charges": "No",
     "description": "Test 4",
-    "url": "itemImages/armor.jpg"
+    "url": "itemImages/default/armor.jpg"
 }];
 
 //fillDB(list);
