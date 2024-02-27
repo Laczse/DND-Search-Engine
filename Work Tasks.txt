@@ -5,13 +5,16 @@ General:
 Items:
 Implement expanding section design
 Make createList write message if parsed an empty list
-Add edit button to collapsible
-Implement edit page/functionality
-Implement uploading images for items
-Implement function to save table in db as json files
-Implement function to load json file and add to database
 Get + and - to be on same line as text in collapsible
 
+Add edit button to collapsible
+Implement edit page/functionality
+
+Implement uploading images for items
+Center input fields for create magic item
+
+Implement function to save table in db as json files
+Implement function to load json file and add to database
 
 Spells:
 Set up the relevant search fields
