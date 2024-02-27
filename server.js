@@ -151,7 +151,7 @@ app.post('/newItem', (req, res) => {
   let url;
   if(req.body.url == null){
     url = "itemImages/";
-    switch (req.body.type[0].toLowerCase()) {
+    switch (req.body.type.toLowerCase()) {
       case 'armor':
         url = url.concat("armor.jpg");
         break;
