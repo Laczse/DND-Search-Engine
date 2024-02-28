@@ -11,8 +11,8 @@ import { insertItem, searchItems, getAllItems } from "./database.js";
 import { capitalizeWords, filterByType, filterByRarity, filterByCharges, filterByAttunement } from "./supportFunctions.js";
 import e from 'express';
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = '127.0.0.3';
+const port = 5000;
 
 const rootFileSystem = process.cwd();
 
