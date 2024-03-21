@@ -55,4 +55,10 @@ Implement function to save table in db as json files
 Implement function to load json file and add to database
 
 
+Marketplace
+Find a way to change the CSS of the searchable chosen select and change css to at least add margin
+Dynammically move output field for total price, when adding or removing a row 
+
+Make it possible to delete a row
+Create a clear button
 

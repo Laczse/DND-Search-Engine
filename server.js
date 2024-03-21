@@ -109,6 +109,20 @@ app.get('/style', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/css/style.css");
 });
 
+app.get('/marketplace.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/marketplace/marketplace.html");
+});
+
+app.get('/marketplace.js', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/js/marketplace.js");
+});
+
+app.get('/marketplaceStyle.css', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/css/marketplaceStyle.css");
+});
+
+
+
 app.get('/monsterStatBlock.css', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/css/monsterStatBlock.css");
 });
