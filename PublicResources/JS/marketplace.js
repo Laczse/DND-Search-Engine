@@ -1,6 +1,8 @@
 let price = 0;
 let rowCounter = -1;
 
+let sellingPriceStyle = document.getElementById("priceStyle");
+sellingPriceStyle.addEventListener("change", updateAllfields);
 
 var totalPriceField = document.createElement("input");
 totalPriceField.setAttribute("type", "text");
@@ -230,10 +232,23 @@ function removeChildrenElements(parentElement){
 }
 
 
+function updateAllfields(){
+    for(let i = 0; i < rowCounter; i++){
+        updateFieldsById(i);
+    }
+    updateTotalPriceField();
+}
+
 function updateInputFields(event){
     let select = event.target;
     let idNumber = select.id.replace(/\D/g, "");
 
+    updateFieldsById(idNumber);
+    
+    updateTotalPriceField();
+}
+
+function updateFieldsById(idNumber){
     let item = document.getElementById("itemSelect" + idNumber);
     let condition = document.getElementById("conditionSelect" + idNumber);
     console.log(item.value);
@@ -249,9 +264,8 @@ function updateInputFields(event){
 
     let lineTotalPriceField = document.getElementById("lineTotalPriceField" + idNumber);
     lineTotalPriceField.setAttribute("value", calculateLineTotalPrice(sellingPriceField.value, quantityField.value));
-    
-    updateTotalPriceField();
 }
+
 
 function findStandardPrice(item){
     let price = 0;
