@@ -1,4 +1,3 @@
-let price = 0;
 let rowCounter = -1;
 
 let sellingPriceStyle = document.getElementById("priceStyle");
