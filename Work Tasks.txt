@@ -9,7 +9,7 @@ Get + and - to be on same line as text in collapsible
 
 
 Implement edit page/functionality
-    Implement filling of current information
+    Implement filling of current information/ find a way to update chosen elements
     Implement editting of info on edit page
     Implement change of picture on edit page
     Implement changing info in db

@@ -52,6 +52,7 @@ async function handleSubmit() {
 
 async function fillItemInfo() {
   itemName = localStorage.getItem("editItem");
+  let item;
   console.log(itemName);
 
   let editItem = JSON.stringify({
@@ -66,6 +67,28 @@ async function fillItemInfo() {
     },
     body: editItem,
   })
-    .then((response) => response.text())
-    .then((text) => console.log("Test \n" + text));
+    .then((response) => response.json())
+    .then((json) => (item = json));
+
+  console.log(item);
+
+  document.getElementById("itemName").value = capitalizeWords(item.name);
+  $("#typeoption").val();
+  let rarity = $("#rarity").val();
+  let attunement = $("#attunement").val();
+  let charges = $("#charges").val();
+  document.getElementById("itemDescription").value = item.description;
+}
+
+function capitalizeWords(str) {
+  const arr = str.split(" ");
+
+  //loop through each element of the array and capitalize the first letter.
+  for (var i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+  }
+  //Join all the elements of the array back into a string
+  //using a blankspace as a separator
+  const str2 = arr.join(" ");
+  return str2;
 }
