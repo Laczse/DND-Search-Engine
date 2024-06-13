@@ -7,7 +7,7 @@ Implement expanding section design
 Make createList write message if parsed an empty list
 Get + and - to be on same line as text in collapsible
 
-Stop collapsible from expanding, when pressing edit button
+
 Refer correctly, when clicking edit button
 Implement edit page/functionality
     Implement editting of info on edit page

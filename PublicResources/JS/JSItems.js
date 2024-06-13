@@ -65,9 +65,13 @@ function createList(list) {
     let i;
     for (i = 0; i < list.length; i++) {
         let collapsibleButton = document.createElement('button');
-        collapsibleButton.innerHTML = '<div class=orders><img src=" ' + list[i].url + '" width="35" height="35" style="padding: 0px 10px 0px 0px; vertical-align:middle"><span style="color:' + setTextColor(list[i].rarity) + ';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span><span>' + '<form action="https://google.com"> <input type="submit" value="Edit" /> </form></div>';
+        
+        collapsibleButton.innerHTML = '<div class=orders><img src=" ' + list[i].url + '" width="35" height="35" style="padding: 0px 10px 0px 0px; vertical-align:middle"><span style="color:' + setTextColor(list[i].rarity) + ';">' + capitalizeWords(list[i].name) + '</span><span>' + capitalizeWords(list[i].type) + '</span><span>' + capitalizeWords(list[i].rarity) + '</span><span>' + '<a id="testEdit' + i + '" href="https://google.com" class="button">Edit</a></div>';
+
+        
         collapsibleButton.className = 'collapsible';
         document.body.appendChild(collapsibleButton);
+        document.getElementById("testEdit" + i).addEventListener("click", function(e) {e.stopPropagation();});
         let divElement = document.createElement('div');
         let divContent = capitalizeWords(list[i].type) + ', ' + capitalizeWords(list[i].rarity) + '<br>' + list[i].description;
         console.log(divContent);
