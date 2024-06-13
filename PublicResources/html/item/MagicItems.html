@@ -1,128 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../chosen/docsupport/style.css" />
+    <link rel="stylesheet" href="../../chosen/docsupport/prism.css" />
+    <link rel="stylesheet" href="../../chosen/chosen.css" />
+    <link rel="stylesheet" href="/style" />
 
-  <link rel="stylesheet" href="../../chosen/docsupport/style.css">
-  <link rel="stylesheet" href="../../chosen/docsupport/prism.css">
-  <link rel="stylesheet" href="../../chosen/chosen.css">
-  <link rel="stylesheet" href="/style">
+    <script defer src="jsItems.js"></script>
+    <title>Magic Items</title>
+  </head>
 
-  <script defer src="jsItems.js"></script>
-  <title>Magic Items</title>
-</head>
+  <body>
+    <button
+      class="indexbutton"
+      type="button"
+      name="Main.html"
+      onclick="location.href='main.html'"
+    >
+      Return to main page
+    </button>
+    <br />
+    <button
+      class="indexbutton"
+      type="button"
+      name="Spells"
+      onclick="location.href='spells.html'"
+    >
+      Spells
+    </button>
+    <br />
+    <button
+      class="indexbutton"
+      type="button"
+      name="Creatures"
+      onclick="location.href='creatures.html'"
+    >
+      Creatures
+    </button>
+    <br />
+    <button
+      class="indexbutton"
+      type="button"
+      name="Marketplace"
+      onclick="location.href='marketplace.html'"
+    >
+      Marketplace
+    </button>
+    <br />
+    <button
+      class="indexbutton"
+      type="button"
+      name="CreateItem"
+      onclick="location.href='createItem.html'"
+    >
+      Create new item
+    </button>
+    <br />
 
-<body>
+    <br />
+    <h1>Magic Items</h1>
+    <br />
+    <div class="container">
+      <form id="searchItems">
+        <label for="itemname" class="col-3 margin">Item name:</label>
+        <span style="margin: 0 71px"></span>
+        <label for="type" class="col-3 margin">Item type:</label>
+        <span style="margin: 0 75px"></span>
+        <label for="rarity" class="col-3 margin">Item rarity:</label>
+        <br />
+        <input type="text" id="itemName" name="itemName" />
 
+        <span style="margin: 0 10px"></span>
 
-  <button class="indexbutton" type="button" name="Main.html" onclick="location.href='main.html'">Return to main
-    page</button>
-  <br>
-  <button class="indexbutton" type="button" name="Spells" onclick="location.href='spells.html'">Spells</button>
-  <br>
-  <button class="indexbutton" type="button" name="Creatures" onclick="location.href='creatures.html'">Creatures</button>
-  <br>
-  <button class="indexbutton" type="button" name="Marketplace"
-    onclick="location.href='marketplace.html'">Marketplace</button>
-  <br>
-  <button class="indexbutton" type="button" name="CreateItem" onclick="location.href='createItem.html'">Create new
-    item</button>
-  <br>
+        <select
+          data-placeholder="Choose type"
+          class="chosen-select margin"
+          multiple
+          tabindex="4"
+          id="type"
+        >
+          <option value="Armor">Armor</option>
+          <option value="Potion">Potion</option>
+          <option value="Ring">Ring</option>
+          <option value="Rod">Rod</option>
+          <option value="Scroll">Scroll</option>
+          <option value="Staff">Staff</option>
+          <option value="Wand">Wand</option>
+          <option value="Weapon">Weapon</option>
+          <option value="Wondrous item">Wondrous item</option>
+        </select>
 
-  <br>
-  <h1>Magic Items</h1>
-  <br> 
-  <div class="container">
-  <form id="searchItems">
+        <span style="margin: 0 10px"></span>
 
+        <select
+          data-placeholder="Choose rarity"
+          class="chosen-select"
+          multiple
+          tabindex="4"
+          id="rarity"
+        >
+          <option value="Common">Common</option>
+          <option value="Uncommon">Uncommon</option>
+          <option value="Rare">Rare</option>
+          <option value="Very rare">Very rare</option>
+          <option value="Legendary/Artifact">Legendary/Artifact</option>
+        </select>
 
+        <br />
+        <label for="attunement" class="col-3 margin">Attunement:</label>
+        <span style="margin: 0 67px"></span>
+        <label for="charges" class="col-3">Charges:</label>
+        <br />
 
-    <label for="itemname" class="col-3 margin">Item name:</label>
-    <span style="margin: 0 71px"></span>
-    <label for="type" class="col-3 margin">Item type:</label>
-    <span style="margin: 0 75px"></span>
-    <label for="rarity" class="col-3 margin">Item rarity:</label>
-    <br>
-    <input type="text" id="itemName" name="itemName">
+        <select
+          data-placeholder="Requires attunement"
+          class="chosen-select"
+          tabindex="-1"
+          id="attunement"
+        >
+          <option value="">-</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
 
-    <span style="margin: 0 10px"></span>
+        <span style="margin: 0 10px"></span>
 
-    <select data-placeholder="Choose type" class="chosen-select margin" multiple tabindex="4" id="type">
-      <option value="Armor">Armor</option>
-      <option value="Potion">Potion</option>
-      <option value="Ring">Ring</option>
-      <option value="Rod">Rod</option>
-      <option value="Scroll">Scroll</option>
-      <option value="Staff">Staff</option>
-      <option value="Wand">Wand</option>
-      <option value="Weapon">Weapon</option>
-      <option value="Wondrous item">Wondrous item</option>
-    </select>
+        <select
+          data-placeholder="Has charges"
+          class="chosen-select margin"
+          tabindex="-1"
+          id="charges"
+        >
+          <option value="">-</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
 
-    <span style="margin: 0 10px"></span>
+        <br /><br />
+        <button type="button" id="submit" class="indexbutton">Submit</button>
+        <button type="button" id="reset" class="indexbutton">
+          Reset Filters
+        </button>
+      </form>
+    </div>
 
-    <select data-placeholder="Choose rarity" class="chosen-select" multiple tabindex="4" id="rarity">
-      <option value="Common">Common</option>
-      <option value="Uncommon">Uncommon</option>
-      <option value="Rare">Rare</option>
-      <option value="Very rare">Very rare</option>
-      <option value="Legendary/Artifact">Legendary/Artifact</option>
-    </select>
+    <br /><br />
+    <div class="container">
+      <label for="sortName" class="col-3 margin">Name</label>
+      <button type="button" id="sortName" class="indexbutton">
+        <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10" />
+      </button>
+      <span style="margin: 0 71px"></span>
+      <label for="sortType" class="col-3 margin">Type</label>
+      <button type="button" id="sortType" class="indexbutton">
+        <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10" />
+      </button>
+      <span style="margin: 0 75px"></span>
+      <label for="sortRarity" class="col-3 margin">Rarity</label>
+      <button type="button" id="sortRarity" class="indexbutton">
+        <img src="/sortingArrows" alt="Sorting Arrows" width="10" height="10" />
+      </button>
+    </div>
+    <br /><br />
+  </body>
 
-    <br>
-    <label for="attunement" class="col-3 margin">Attunement:</label>
-    <span style="margin: 0 67px"></span>
-    <label for="charges" class="col-3">Charges:</label>
-    <br>
-
-    <select data-placeholder="Requires attunement" class="chosen-select" tabindex="-1" id="attunement">
-      <option value="">-</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-
-    <span style="margin: 0 10px"></span>
-
-    <select data-placeholder="Has charges" class="chosen-select margin" tabindex="-1" id="charges">
-      <option value="">-</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-
-
-    <br><br>
-    <button type="button" id="submit" class="indexbutton">Submit</button>
-    <button type="button" id="reset" class="indexbutton">Reset Filters</button>
-  </form>
-  </div>
-
-  <br><br>
-  <div class="container">
-  <label for="sortName" class="col-3 margin">Name</label>
-  <button type="button" id="sortName" class="indexbutton"> <img src="/sortingArrows" alt="Sorting Arrows" width="10"
-      height="10"></button>
-  <span style="margin: 0 71px"></span>
-  <label for="sortType" class="col-3 margin">Type</label>
-  <button type="button" id="sortType" class="indexbutton"> <img src="/sortingArrows" alt="Sorting Arrows" width="10"
-      height="10"></button>
-  <span style="margin: 0 75px"></span>
-  <label for="sortRarity" class="col-3 margin">Rarity</label>
-  <button type="button" id="sortRarity" class="indexbutton"> <img src="/sortingArrows" alt="Sorting Arrows" width="10"
-      height="10"></button>
-  </div>
-  <br><br>
-
-
-
-
-</body>
-
-<script src="../../chosen/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="../../chosen/chosen.jquery.js" type="text/javascript"></script>
-<script src="../../chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
-<script src="../../chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
-
+  <script
+    src="../../chosen/docsupport/jquery-3.2.1.min.js"
+    type="text/javascript"
+  ></script>
+  <script src="../../chosen/chosen.jquery.js" type="text/javascript"></script>
+  <script
+    src="../../chosen/docsupport/prism.js"
+    type="text/javascript"
+    charset="utf-8"
+  ></script>
+  <script
+    src="../../chosen/docsupport/init.js"
+    type="text/javascript"
+    charset="utf-8"
+  ></script>
 </html>
