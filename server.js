@@ -1,9 +1,4 @@
-import http from "http";
-import fs from "fs";
-import path from "path";
 import process from "process";
-import url from "url";
-import qs from "querystring";
 import express from "express";
 import bodyParser from "body-parser";
 
@@ -15,7 +10,6 @@ import {
   filterByCharges,
   filterByAttunement,
 } from "./supportFunctions.js";
-import e from "express";
 
 const hostname = "127.0.0.3";
 const port = 5000;
