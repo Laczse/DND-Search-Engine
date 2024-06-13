@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../chosen/docsupport/style.css">
+    <link rel="stylesheet" href="../../chosen/docsupport/prism.css">
+    <link rel="stylesheet" href="../../chosen/chosen.css">
+    <link rel="stylesheet" href="/style">
+
+    <script defer src="jsEditItem.js"></script>
+    <title>Edit Magic Items</title>
+</head>
+
+<body>
+    <button class="indexbutton" type="button" name="Main.html" onclick="location.href='main.html'">Return to main
+        page</button>
+    <br>
+    <button class="indexbutton" type="button" name="MagicItems.html" onclick="location.href='magicItems.html'">Magic
+        Items</button>
+    <br>
+    <button class="indexbutton" type="button" name="Spells" onclick="location.href='spells.html'">Spells</button>
+    <br>
+    <button class="indexbutton" type="button" name="Creatures"
+        onclick="location.href='creatures.html'">Creatures</button>
+    <br>
+    <button class="indexbutton" type="button" name="Marketplace"
+        onclick="location.href='marketplace.html'">Marketplace</button>
+    <br>
+    <button class="indexbutton" type="button" name="CreateItem" onclick="location.href='createItem.html'">Create new
+        item</button>
+    <br>
+
+    <br>
+    <h1>Edit Magic Items</h1>
+    <br>
+    <div class="container">
+        <form id="createMagicItem">
+
+            <label for="itemname" class="col-3">Item name:</label>
+            <span style="margin: 0 71px"></span>
+            <label for="type" class="col-3">Item type:</label>
+            <span style="margin: 0 75px"></span>
+            <label for="rarity" class="col-3">Item rarity:</label>
+            <br>
+            <input type="text" id="itemName" name="itemName">
+
+            <span style="margin: 0 10px"></span>
+
+            <select data-placeholder="Choose type" class="chosen-select" tabindex="-1" id="type">
+                <option value="">-</option>
+                <option value="Armor">Armor</option>
+                <option value="Potion">Potion</option>
+                <option value="Ring">Ring</option>
+                <option value="Rod">Rod</option>
+                <option value="Scroll">Scroll</option>
+                <option value="Staff">Staff</option>
+                <option value="Wand">Wand</option>
+                <option value="Weapon">Weapon</option>
+                <option value="Wondrous item">Wondrous item</option>
+            </select>
+
+            <span style="margin: 0 10px"></span>
+
+            <select data-placeholder="Choose rarity" class="chosen-select" tabindex="-1" id="rarity">
+                <option value="">-</option>
+                <option value="Common">Common</option>
+                <option value="Uncommon">Uncommon</option>
+                <option value="Rare">Rare</option>
+                <option value="Very rare">Very rare</option>
+                <option value="Legendary/Artifact">Legendary/Artifact</option>
+            </select>
+
+            <br>
+            <label for="attunement" class="col-3">Attunement:</label>
+            <span style="margin: 0 67px"></span>
+            <label for="charges" class="col-3">Charges:</label>
+            <br>
+
+            <select data-placeholder="Requires attunement" class="chosen-select" tabindex="-1" id="attunement">
+                <option value="">-</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <span style="margin: 0 10px"></span>
+
+            <select data-placeholder="Has charges" class="chosen-select" tabindex="-1" id="charges">
+                <option value="">-</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <br>
+            <label for="itemDescription" class="col-3">Item desciption:</label>
+            <br>
+            <textarea id="itemDescription" name="itemDescription" rows="4" cols="50"></textarea>
+
+            <br><br>
+            <button type="button" id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+
+<script src="../../chosen/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="../../chosen/chosen.jquery.js" type="text/javascript"></script>
+<script src="../../chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

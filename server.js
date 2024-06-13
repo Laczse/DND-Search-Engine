@@ -7,7 +7,7 @@ import qs from "querystring";
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import { insertItem, searchItems, getAllItems } from "./database.js";
+import { insertItem, searchItems, getAllItems, findItem } from "./database.js";
 import { capitalizeWords, filterByType, filterByRarity, filterByCharges, filterByAttunement } from "./supportFunctions.js";
 import e from 'express';
 
@@ -45,6 +45,10 @@ app.get('/createItem.html', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/html/item/CreateItem.html");
 });
 
+app.get('/editItem.html', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/html/item/EditItem.html");
+});
+
 app.get('/createCreature.html', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/html/creature/CreateCreature.html");
 });
@@ -63,6 +67,10 @@ app.get('/jsItems.js', (req, res) => {
 
 app.get('/jsNewItem.js', (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/js/JSNewItem.js");
+});
+
+app.get('/jsEditItem.js', (req, res) => {
+  res.sendFile(rootFileSystem + "/publicResources/js/jsEditItem.js");
 });
 
 app.get('/chosen/chosen.css', (req, res) => {
@@ -155,8 +163,11 @@ app.post('/onLoadItemSearch', (req, res) => {
   console.log("\n");
   console.log(items);
   return res.send(items);
-}
-);
+});
+
+app.post('/findItem', (req, res) => {
+  return res.send(findItem(req.body.name));
+});
 
 app.post('/newItem', (req, res) => {
   console.log(req.body);
