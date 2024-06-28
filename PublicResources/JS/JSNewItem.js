@@ -5,6 +5,7 @@ async function handleSubmit() {
   console.log("JUHUU!");
   let name = document.getElementById("itemName").value;
   let type = $("#type").val();
+  let additionalType = document.getElementById("additionalType").value;
   let rarity = $("#rarity").val();
   let attunement = $("#attunement").val();
   let charges = $("#charges").val();
@@ -26,6 +27,7 @@ async function handleSubmit() {
     let newItem = JSON.stringify({
       name: name,
       type: type,
+      additionalType: additionalType,
       rarity: rarity,
       attunement: attunement,
       charges: charges,

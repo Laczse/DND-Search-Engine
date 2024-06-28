@@ -75,7 +75,7 @@ async function fillItemInfo() {
 
   document.getElementById("itemName").value = capitalizeWords(item.name);
   $("#typeoption").val();
-  let additionalType = item.additionalType;
+  document.getElementById("additionalType").value = item.additionalType;
   let rarity = $("#rarity").val();
   let attunement = $("#attunement").val();
   let charges = $("#charges").val();

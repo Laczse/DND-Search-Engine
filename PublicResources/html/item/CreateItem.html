@@ -70,7 +70,9 @@
         <span style="margin: 0 71px"></span>
         <label for="type" class="col-3">Item type:</label>
         <span style="margin: 0 75px"></span>
-        <label for="rarity" class="col-3">Item rarity:</label>
+        <label for="AdditionalType" class="col-3"
+          >Additional item information:</label
+        >
         <br />
         <input type="text" id="itemName" name="itemName" />
 
@@ -96,6 +98,16 @@
 
         <span style="margin: 0 10px"></span>
 
+        <input type="text" id="additionalType" name="additionalType" />
+
+        <br />
+        <label for="rarity" class="col-3">Item rarity:</label>
+        <span style="margin: 0 71px"></span>
+        <label for="attunement" class="col-3">Attunement:</label>
+        <span style="margin: 0 71px"></span>
+        <label for="charges" class="col-3">Charges:</label>
+        <br />
+
         <select
           data-placeholder="Choose rarity"
           class="chosen-select"
@@ -110,11 +122,7 @@
           <option value="Legendary/Artifact">Legendary/Artifact</option>
         </select>
 
-        <br />
-        <label for="attunement" class="col-3">Attunement:</label>
-        <span style="margin: 0 67px"></span>
-        <label for="charges" class="col-3">Charges:</label>
-        <br />
+        <span style="margin: 0 10px"></span>
 
         <select
           data-placeholder="Requires attunement"
