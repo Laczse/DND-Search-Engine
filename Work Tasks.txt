@@ -7,6 +7,12 @@ Implement expanding section design
 Make createList write message if parsed an empty list
 Get + and - to be on same line as text in collapsible
 
+Add additional item description field to create new item page
+Add additional item description to collapsible
+Add additional item description field to edit page
+Add additional item description to DB
+
+Add attunement to collapsible description
 
 Implement edit page/functionality
     Implement filling of current information/ find a way to update chosen elements

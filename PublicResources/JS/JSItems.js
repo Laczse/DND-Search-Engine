@@ -64,13 +64,19 @@ function createList(list) {
   for (i = 0; i < list.length; i++) {
     let collapsibleButton = document.createElement("button");
 
-    collapsibleButton.innerHTML =
+    let stringHeadline =
       '<div class=orders><img src=" ' +
       list[i].url +
       '" width="35" height="35" style="padding: 0px 10px 0px 0px; vertical-align:middle"><span style="color:' +
       setTextColor(list[i].rarity) +
       ';">' +
-      capitalizeWords(list[i].name) +
+      capitalizeWords(list[i].name);
+
+    if (list[i].attunement == "yes") {
+      stringHeadline += " (A)";
+    }
+
+    stringHeadline +=
       "</span><span>" +
       capitalizeWords(list[i].type) +
       "</span><span>" +
@@ -80,6 +86,7 @@ function createList(list) {
       list[i].name +
       '" href="editItem.html" class="button">Edit</a></div>';
 
+    collapsibleButton.innerHTML = stringHeadline;
     collapsibleButton.className = "collapsible";
     document.body.appendChild(collapsibleButton);
     document
@@ -306,6 +313,7 @@ let list = [
   {
     name: "Flame Tongue",
     type: "Weapon",
+    additionalType: "any sword",
     rarity: "Rare",
     attunement: "Yes",
     charges: "No",
@@ -316,6 +324,7 @@ let list = [
   {
     name: "Alchemy Jug",
     type: "Wondrous",
+    additionalType: "",
     rarity: "Uncommon",
     attunement: "No",
     charges: "No",
@@ -325,6 +334,7 @@ let list = [
   {
     name: "Amulet of the Black Skull",
     type: "Wondrous",
+    additionalType: "",
     rarity: "Very Rare",
     attunement: "Yes",
     charges: "Yes",
@@ -334,6 +344,7 @@ let list = [
   {
     name: "Adamantine Armor",
     type: "Armor",
+    additionalType: "medium or heavy, but not hide",
     rarity: "Uncommon",
     attunement: "No",
     charges: "No",
@@ -343,6 +354,7 @@ let list = [
   {
     name: "Arrow-Catching Shield",
     type: "Armor",
+    additionalType: "shield",
     rarity: "Rare",
     attunement: "Yes",
     charges: "No",
