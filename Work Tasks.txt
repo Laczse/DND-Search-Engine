@@ -8,9 +8,7 @@ Make createList write message if parsed an empty list
 Get + and - to be on same line as text in collapsible
 
 Add additional item description field to create new item page
-Add additional item description to collapsible
-Add additional item description field to edit page
-Add additional item description to DB
+Add additional item description field to create edit item page
 
 Add attunement to collapsible description
 

@@ -28,6 +28,7 @@ async function handleSubmit() {
     let editItem = JSON.stringify({
       name: name,
       type: type,
+      additionalType: additionalType,
       rarity: rarity,
       attunement: attunement,
       charges: charges,
@@ -74,6 +75,7 @@ async function fillItemInfo() {
 
   document.getElementById("itemName").value = capitalizeWords(item.name);
   $("#typeoption").val();
+  let additionalType = item.additionalType;
   let rarity = $("#rarity").val();
   let attunement = $("#attunement").val();
   let charges = $("#charges").val();

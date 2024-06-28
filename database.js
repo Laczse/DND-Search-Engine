@@ -15,7 +15,7 @@ function connectDB() {
     const db = new Database("data.db");
     console.log("Database created");
     const itemTable = db.prepare(
-      "CREATE TABLE items(id INTEGER PRIMARY KEY,name,type,rarity,attunement,charges,description,url)"
+      "CREATE TABLE items(id INTEGER PRIMARY KEY,name,type,additionalType,rarity,attunement,charges,description,url)"
     );
     itemTable.run();
     console.log("Tables created");
@@ -23,11 +23,29 @@ function connectDB() {
   }
 }
 
-function insertItem(name, type, rarity, attunement, charges, description, url) {
+function insertItem(
+  name,
+  type,
+  additionalType,
+  rarity,
+  attunement,
+  charges,
+  description,
+  url
+) {
   const insert = db.prepare(
-    "INSERT INTO items(name,type,rarity,attunement,charges,description,url) VALUES (?,?,?,?,?,?,?)"
+    "INSERT INTO items(name,type,additionalType,rarity,attunement,charges,description,url) VALUES (?,?,?,?,?,?,?,?)"
   );
-  insert.run(name, type, rarity, attunement, charges, description, url);
+  insert.run(
+    name,
+    type,
+    additionalType,
+    rarity,
+    attunement,
+    charges,
+    description,
+    url
+  );
 }
 
 function searchItems(itemName) {

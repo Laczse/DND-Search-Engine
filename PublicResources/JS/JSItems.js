@@ -93,12 +93,19 @@ function createList(list) {
       .getElementById(list[i].name)
       .addEventListener("click", enterEditItem);
     let divElement = document.createElement("div");
-    let divContent =
-      capitalizeWords(list[i].type) +
-      ", " +
-      capitalizeWords(list[i].rarity) +
-      "<br>" +
-      list[i].description;
+    let divContent = capitalizeWords(list[i].type);
+
+    if (list[i].additionalType != "") {
+      divContent += " (" + list[i].additionalType + ")";
+    }
+
+    divContent += ", " + capitalizeWords(list[i].rarity);
+
+    if (list[i].attunement == "yes") {
+      divContent += ", Requires attunement";
+    }
+
+    divContent += "<br>" + list[i].description;
     console.log(divContent);
     divElement.innerHTML = divContent;
     divElement.className = "content";
@@ -161,6 +168,7 @@ async function fillDB(list) {
     let searchObject = JSON.stringify({
       name: list[i].name,
       type: list[i].type,
+      additionalType: list[i].additionalType,
       rarity: list[i].rarity,
       attunement: list[i].attunement,
       charges: list[i].charges,

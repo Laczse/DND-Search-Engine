@@ -221,6 +221,7 @@ app.post("/newItem", (req, res) => {
   insertItem(
     req.body.name.toLowerCase(),
     req.body.type.toLowerCase(),
+    req.body.additionalType.toLowerCase(),
     req.body.rarity.toLowerCase(),
     req.body.attunement.toLowerCase(),
     req.body.charges.toLowerCase(),
