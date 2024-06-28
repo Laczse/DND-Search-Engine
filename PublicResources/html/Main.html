@@ -4,62 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../chosen/docsupport/style.css" />
+    <link rel="stylesheet" href="../../chosen/docsupport/prism.css" />
+    <link rel="stylesheet" href="../../chosen/chosen.css" />
+    <link rel="stylesheet" href="/style" />
+
     <title>DnD Search Engine</title>
   </head>
 
   <body>
     <h1>Welcome</h1>
     <p>
-      This is a website for viewing and searching in homebrew material for Dnd
-      5e.
+      This is a website for viewing and searching in both homebrew and official
+      material for Dnd 5e.
     </p>
 
     <p>
       What are you looking for? <br />
-      <button
-        class="indexbutton"
-        type="button"
-        name="MagicItems.html"
-        onclick="location.href='magicItems.html'"
-      >
+      <a id="Main" href="main.html" class="indexbutton">
+        Return to main page
+      </a>
+
+      <br />
+
+      <a id="MagicItems" href="magicItems.html" class="indexbutton">
         Magic Items
-      </button>
+      </a>
+
       <br />
-      <button
-        class="indexbutton"
-        type="button"
-        name="Spells"
-        onclick="location.href='spells.html'"
-      >
-        Spells
-      </button>
+
+      <a id="Spells" href="spells.html" class="indexbutton"> Spells </a>
+
       <br />
-      <button
-        class="indexbutton"
-        type="button"
-        name="Creatures"
-        onclick="location.href='creatures.html'"
-      >
+
+      <a id="Creatures" href="creatures.html" class="indexbutton">
         Creatures
-      </button>
+      </a>
+
       <br />
-      <button
-        class="indexbutton"
-        type="button"
-        name="Creature statblock example"
-        onclick="location.href='monsterStatBlock.html'"
-      >
-        Statblock
-      </button>
-      <br />
-      <button
-        class="indexbutton"
-        type="button"
-        name="Marketplace"
-        onclick="location.href='marketplace.html'"
-      >
+
+      <a id="Marketplace" href="marketplace.html" class="indexbutton">
         Marketplace
-      </button>
+      </a>
+
+      <br />
+
+      <a id="CreateItem" href="createItem.html" class="indexbutton">
+        Create new item
+      </a>
+
       <br />
     </p>
   </body>

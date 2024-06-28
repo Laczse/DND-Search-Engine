@@ -66,7 +66,8 @@ h1 {
 }
 
 .indexbutton {
-  margin: 3px;
+  padding: 5 5px;
+  margin: 5px;
 }
 
 .input {
@@ -84,4 +85,15 @@ a.button {
   color: buttontext;
   background-color: buttonface;
   text-decoration: none;
+}
+
+a.indexbutton {
+  padding: 1px 6px;
+  border: 1px outset buttonborder;
+  border-radius: 3px;
+  color: buttontext;
+  background-color: buttonface;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
 }
