@@ -7,6 +7,8 @@ Implement expanding section design
 Make createList write message if parsed an empty list
 Get + and - to be on same line as text in collapsible
 
+Get create new item page to reload on succesfull request
+Make error message appear on unsuccesfull request on create new item page
 
 Implement edit page/functionality
     Implement filling of current information/ find a way to update chosen elements
