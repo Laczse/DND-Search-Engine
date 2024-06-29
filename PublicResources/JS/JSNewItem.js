@@ -35,7 +35,7 @@ async function handleSubmit() {
       url: url,
     });
     console.log(newItem);
-    await fetch("newItem", {
+    let itemCreationResponse = await fetch("newItem", {
       method: "POST",
       headers: {
         Accept: "application/json",

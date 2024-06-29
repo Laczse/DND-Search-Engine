@@ -218,17 +218,23 @@ app.post("/newItem", (req, res) => {
     url = req.body.url;
   }
 
-  insertItem(
-    req.body.name.toLowerCase(),
-    req.body.type.toLowerCase(),
-    req.body.additionalType.toLowerCase(),
-    req.body.rarity.toLowerCase(),
-    req.body.attunement.toLowerCase(),
-    req.body.charges.toLowerCase(),
-    req.body.description,
-    url
-  );
-  return res.sendStatus(200);
+  if (findItem(req.body.name.toLowerCase()) == null) {
+    insertItem(
+      req.body.name.toLowerCase(),
+      req.body.type.toLowerCase(),
+      req.body.additionalType.toLowerCase(),
+      req.body.rarity.toLowerCase(),
+      req.body.attunement.toLowerCase(),
+      req.body.charges.toLowerCase(),
+      req.body.description,
+      url
+    );
+    return res.sendStatus(200);
+  } else {
+    console.log("Item with that name already exists");
+  }
+
+  return res.sendStatus(422);
 });
 
 app.listen(port, hostname, () => {
