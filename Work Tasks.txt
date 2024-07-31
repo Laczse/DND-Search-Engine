@@ -67,6 +67,16 @@ Marketplace
 Find a way to change the CSS of the searchable chosen select and change css to at least add margin
 Dynammically move output field for total price, when adding or removing a row 
 
+Possibly create an artwork category
+Create a misc category, where you can define the price yourself
+
+Possibly:
+Og I mean, hvis i vil gøre meget ud af det kunne en funktion også laves så DM måske kunne definere en liste af equipment som så kunne gives videre til spillere gennem link/fil
+Så listen allerede er lavet men antallet og condition senere defineres in-session
+Så kan DM ligesom lave det som en del af prep og så tager det minimum tid in-session at gøre det hele, da en spiller ikke skal til at manipulere for mange dropdowns i noget tid
+
+Make it possible to divide the total sum by number of players
+
 Make it possible to delete a row
 Create a clear button
 

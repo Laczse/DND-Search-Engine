@@ -1,3 +1,4 @@
+let price = 0;
 let rowCounter = -1;
 
 let sellingPriceStyle = document.getElementById("priceStyle");
@@ -230,7 +231,6 @@ function removeChildrenElements(parentElement) {
     parentElement.lastChild.remove();
   }
 }
-
 function updateAllfields() {
   for (let i = 0; i < rowCounter; i++) {
     updateFieldsById(i);
@@ -301,20 +301,28 @@ function findStandardPrice(item) {
 
 function calculateSellingPrice(standardPrice, condition) {
   let price = 0;
+  let lowPriceProcentage = 0.2;
+  let mediumPriceProcentage = 0.4;
+  let highPriceProcentage = 0.8;
+  let priceStyle = document.getElementById("priceStyle").value;
+  if (priceStyle == "1") {
+    lowPriceProcentage = 0.25;
+    mediumPriceProcentage = 0.5;
+  }
 
   switch (condition) {
     case "Used":
     case "Flawed":
-      price = standardPrice * 0.5;
+      price = standardPrice * mediumPriceProcentage;
       break;
     case "Tattered":
     case "Cracked":
-      price = standardPrice * 0.25;
+      price = standardPrice * lowPriceProcentage;
       break;
     case "New":
     case "Perfect":
     default:
-      price = standardPrice;
+      price = standardPrice * highPriceProcentage;
       break;
   }
   return price;
