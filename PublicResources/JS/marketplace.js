@@ -29,7 +29,14 @@ document.body.appendChild(totalPriceLabel);
 
 function createItemLine() {
   rowCounter++;
-  var itemTypes = ["Choose Type", "Armor", "Gemstone", "Weapons"];
+  var itemTypes = [
+    "Choose Type",
+    "Armor",
+    "Gemstone",
+    "Weapons",
+    "Art",
+    "Misc",
+  ];
   const breakLine = document.createElement("br");
   document.body.appendChild(breakLine);
 
@@ -172,6 +179,9 @@ function createItemList(parentSelect, typeSelect) {
     case "Weapons":
       var itemList = weaponList;
       break;
+    case "Art":
+      var itemList = artList;
+      break;
     default:
       var itemList = [];
       break;
@@ -188,10 +198,27 @@ function createConditionList(parentSelect, typeSelect) {
     case "Gemstone":
       var conditionList = ["Perfect", "Flawed", "Cracked"];
       break;
+    case "Art":
+      var conditionList = ["Pristine", "Damaged", "Ruined"];
+      break;
     default:
       var conditionList = [];
       break;
   }
+
+  var procentageConditionList = [
+    "100%",
+    "90%",
+    "80%",
+    "70%",
+    "60%",
+    "50%",
+    "40%",
+    "30%",
+    "20%",
+    "10%",
+  ];
+  conditionList = conditionList.concat(procentageConditionList);
 
   createSelectListFromArray(parentSelect, conditionList);
 }
@@ -289,6 +316,8 @@ function findStandardPrice(item) {
     itemList = armorList;
   } else if (itemType == "Gemstone") {
     itemList = gemstoneList;
+  } else if (itemType == "Art") {
+    itemList = artList;
   }
 
   for (let i = 0; i < itemList.length; i++) {
@@ -313,14 +342,48 @@ function calculateSellingPrice(standardPrice, condition) {
   switch (condition) {
     case "Used":
     case "Flawed":
+    case "Damaged":
       price = standardPrice * mediumPriceProcentage;
       break;
     case "Tattered":
     case "Cracked":
+    case "Ruined":
       price = standardPrice * lowPriceProcentage;
       break;
+    case "100%":
+      price = standardPrice;
+      break;
+    case "90%":
+      price = standardPrice * 0.9;
+      break;
+    case "80%":
+      price = standardPrice * 0.8;
+      break;
+    case "70%":
+      price = standardPrice * 0.7;
+      break;
+    case "60%":
+      price = standardPrice * 0.6;
+      break;
+    case "50%":
+      price = standardPrice * 0.5;
+      break;
+    case "40%":
+      price = standardPrice * 0.4;
+      break;
+    case "30%":
+      price = standardPrice * 0.3;
+      break;
+    case "20%":
+      price = standardPrice * 0.2;
+      break;
+    case "10%":
+      price = standardPrice * 0.1;
+      break;
+
     case "New":
     case "Perfect":
+    case "Pristine":
     default:
       price = standardPrice * highPriceProcentage;
       break;
@@ -795,5 +858,28 @@ armorList = [
   {
     name: "Studded leather",
     price: "45",
+  },
+];
+
+artList = [
+  {
+    name: "25gp art object",
+    price: "25",
+  },
+  {
+    name: "250gp art object",
+    price: "250",
+  },
+  {
+    name: "750gp art object",
+    price: "750",
+  },
+  {
+    name: "2500gp art object",
+    price: "2500",
+  },
+  {
+    name: "7500gp art object",
+    price: "7500",
   },
 ];

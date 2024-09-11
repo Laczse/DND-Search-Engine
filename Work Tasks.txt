@@ -67,7 +67,7 @@ Marketplace
 Find a way to change the CSS of the searchable chosen select and change css to at least add margin
 Dynammically move output field for total price, when adding or removing a row 
 
-Possibly create an artwork category
+Flesh out art object category so that it is based on individual art object not price categories
 Create a misc category, where you can define the price yourself
 
 Possibly:
