@@ -38,10 +38,23 @@
     <p>
       This is a website for calculating selling prices for standard equipment in
       Dnd 5e.
-      <select name="priceStyle" id="priceStyle">
+      <div>
+      <select name="priceStyle" id="priceStyle" class="margin-left">
         <option value="0">Morten Prices</option>
         <option value="1">Lasse Prices</option>
       </select>
+
+      <span style="margin: 0 10px"></span>
+
+      <label for="nrPlayers">Number of players</label>
+      <select name="nrPlayers" id="nrPlayers">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      </div>
     </p>
 
     <span style="margin: 0 20px"></span>

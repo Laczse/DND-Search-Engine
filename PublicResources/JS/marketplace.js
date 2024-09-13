@@ -4,6 +4,9 @@ let rowCounter = -1;
 let sellingPriceStyle = document.getElementById("priceStyle");
 sellingPriceStyle.addEventListener("change", updateAllfields);
 
+let playerCount = document.getElementById("nrPlayers");
+playerCount.addEventListener("change", updatePlayerPrice);
+
 var totalPriceField = document.createElement("input");
 totalPriceField.setAttribute("type", "text");
 totalPriceField.setAttribute("id", "totalPriceField");
@@ -18,14 +21,37 @@ totalPriceLabel.innerHTML = "Total Price: ";
 
 totalPriceField.style.position = "fixed";
 totalPriceField.style.bottom = "20%";
-totalPriceField.style.right = "20%";
+totalPriceField.style.right = "15%";
 
 totalPriceLabel.style.position = "fixed";
 totalPriceLabel.style.bottom = "25%";
-totalPriceLabel.style.right = "20%";
+totalPriceLabel.style.right = "15%";
 
 document.body.appendChild(totalPriceField);
 document.body.appendChild(totalPriceLabel);
+
+var pricePlayerField = document.createElement("input");
+pricePlayerField.setAttribute("type", "text");
+pricePlayerField.setAttribute("id", "pricePlayerField");
+pricePlayerField.setAttribute("class", "textField");
+pricePlayerField.setAttribute("value", "0");
+pricePlayerField.setAttribute("readonly", "true");
+
+var pricePlayerLabel = document.createElement("label");
+pricePlayerLabel.setAttribute("for", "pricePlayerField");
+pricePlayerLabel.setAttribute("class", "label");
+pricePlayerLabel.innerHTML = "Price Per Player: ";
+
+pricePlayerField.style.position = "fixed";
+pricePlayerField.style.bottom = "10%";
+pricePlayerField.style.right = "15%";
+
+pricePlayerLabel.style.position = "fixed";
+pricePlayerLabel.style.bottom = "15%";
+pricePlayerLabel.style.right = "15%";
+
+document.body.appendChild(pricePlayerField);
+document.body.appendChild(pricePlayerLabel);
 
 function createItemLine() {
   rowCounter++;
@@ -258,6 +284,7 @@ function removeChildrenElements(parentElement) {
     parentElement.lastChild.remove();
   }
 }
+
 function updateAllfields() {
   for (let i = 0; i < rowCounter; i++) {
     updateFieldsById(i);
@@ -424,11 +451,21 @@ function updateTotalPriceField() {
     }
   }
   totalPriceField.setAttribute("value", totalPrice);
+  updatePlayerPrice();
+}
+
+function updatePlayerPrice() {
+  let playerPrice = 0;
+
+  let totalPrice = totalPriceField.value;
+  let playerNumber = document.getElementById("nrPlayers").value;
+  playerPrice = totalPrice / playerNumber;
+  pricePlayerField.setAttribute("value", playerPrice);
 }
 
 createItemLine();
 
-weaponList = [
+let weaponList = [
   {
     name: "Battleaxe",
     price: "10",
@@ -591,7 +628,7 @@ weaponList = [
   },
 ];
 
-gemstoneList = [
+let gemstoneList = [
   {
     name: "Alexandrite",
     price: "500",
@@ -802,7 +839,7 @@ gemstoneList = [
   },
 ];
 
-armorList = [
+let armorList = [
   {
     name: "Breastplate",
     price: "400",
@@ -861,7 +898,7 @@ armorList = [
   },
 ];
 
-artList = [
+let artList = [
   {
     name: "25gp art object",
     price: "25",
