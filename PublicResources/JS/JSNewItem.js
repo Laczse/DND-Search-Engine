@@ -44,7 +44,14 @@ async function handleSubmit() {
       body: newItem,
     })
       .then((response) => response.text())
-      .then((text) => console.log("Test \n" + text));
+      .then((text) => {
+        if (text != "OK") {
+          window.alert("Item with that name already exists");
+        } else {
+          console.log(text);
+          location.reload();
+        }
+      });
   } else {
     window.alert("Please fill all fields before submitting.");
   }

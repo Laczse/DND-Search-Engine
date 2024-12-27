@@ -7,7 +7,6 @@ Implement expanding section design
 Make createList write message if parsed an empty list
 Get + and - to be on same line as text in collapsible
 
-Get create new item page to reload on succesfull request
 Improve error popup to be specific about missing input fields
 
 Implement edit page/functionality
