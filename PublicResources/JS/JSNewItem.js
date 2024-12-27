@@ -46,6 +46,6 @@ async function handleSubmit() {
       .then((response) => response.text())
       .then((text) => console.log("Test \n" + text));
   } else {
-    console.log("Please fill all the fields before submitting.");
+    window.alert("Please fill all fields before submitting.");
   }
 }
