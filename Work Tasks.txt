@@ -75,8 +75,6 @@ Og I mean, hvis i vil gøre meget ud af det kunne en funktion også laves så DM
 Så listen allerede er lavet men antallet og condition senere defineres in-session
 Så kan DM ligesom lave det som en del af prep og så tager det minimum tid in-session at gøre det hele, da en spiller ikke skal til at manipulere for mange dropdowns i noget tid
 
-Make it possible to divide the total sum by number of players
-
 Make it possible to delete a row
 Create a clear button
 
