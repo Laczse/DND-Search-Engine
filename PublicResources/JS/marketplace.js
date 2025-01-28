@@ -7,6 +7,10 @@ sellingPriceStyle.addEventListener("change", updateAllfields);
 let playerCount = document.getElementById("nrPlayers");
 playerCount.addEventListener("change", updatePlayerPrice);
 
+let clearButton = document.getElementById("clear");
+console.log(clearButton.id);
+clearButton.addEventListener("onclick", reloadPage);
+
 var totalPriceField = document.createElement("input");
 totalPriceField.setAttribute("type", "text");
 totalPriceField.setAttribute("id", "totalPriceField");
@@ -461,6 +465,11 @@ function updatePlayerPrice() {
   let playerNumber = document.getElementById("nrPlayers").value;
   playerPrice = totalPrice / playerNumber;
   pricePlayerField.setAttribute("value", playerPrice);
+}
+
+function reloadPage() {
+  console.log("Reload Page");
+  window.reload();
 }
 
 createItemLine();

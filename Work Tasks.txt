@@ -76,4 +76,4 @@ Så kan DM ligesom lave det som en del af prep og så tager det minimum tid in-s
 
 Make it possible to delete a row
 Create a clear button
-
+Move support functions out of main file, such that it is easier to get an overview
