@@ -9,7 +9,7 @@ playerCount.addEventListener("change", updatePlayerPrice);
 
 let clearButton = document.getElementById("clear");
 console.log(clearButton.id);
-clearButton.addEventListener("onclick", reloadPage);
+clearButton.addEventListener("click", reloadPage);
 
 var totalPriceField = document.createElement("input");
 totalPriceField.setAttribute("type", "text");
@@ -468,8 +468,7 @@ function updatePlayerPrice() {
 }
 
 function reloadPage() {
-  console.log("Reload Page");
-  window.reload();
+  location.reload();
 }
 
 createItemLine();

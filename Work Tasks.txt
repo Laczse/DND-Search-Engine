@@ -75,5 +75,4 @@ Så listen allerede er lavet men antallet og condition senere defineres in-sessi
 Så kan DM ligesom lave det som en del af prep og så tager det minimum tid in-session at gøre det hele, da en spiller ikke skal til at manipulere for mange dropdowns i noget tid
 
 Make it possible to delete a row
-Create a clear button
 Move support functions out of main file, such that it is easier to get an overview
