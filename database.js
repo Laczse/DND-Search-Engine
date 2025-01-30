@@ -1,7 +1,7 @@
 import fs from "fs";
 import Database from "better-sqlite3";
 
-export { insertItem, searchItems, getAllItems, findItem };
+export { insertItem, searchItems, getAllItems, findItem, editItem };
 
 const db_path = "./data.db";
 const db = connectDB();
@@ -71,4 +71,31 @@ function printDB() {
   const stmt = db.prepare("SELECT * FROM items");
   console.log("Printing DB \n");
   console.log(stmt);
+}
+
+function editItem(
+  oldName,
+  newName,
+  type,
+  additionalType,
+  rarity,
+  attunement,
+  charges,
+  description,
+  url
+) {
+  const update = db.prepare(
+    "UPDATE items SET (name,type,additionalType,rarity,attunement,charges,description,url) = (?,?,?,?,?,?,?,?) WHERE name = ?"
+  );
+  update.run(
+    newName,
+    type,
+    additionalType,
+    rarity,
+    attunement,
+    charges,
+    description,
+    url,
+    oldName
+  );
 }

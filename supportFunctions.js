@@ -4,6 +4,7 @@ export {
   filterByRarity,
   filterByCharges,
   filterByAttunement,
+  setItemURL,
 };
 
 function capitalizeWords(str) {
@@ -89,4 +90,46 @@ function filterByAttunement(items, attunement) {
     }
     return items;
   }
+}
+
+function setItemURL(req) {
+  let url;
+  if (req.body.url == null) {
+    url = "itemImages/";
+    switch (req.body.type.toLowerCase()) {
+      case "armor":
+        url = url.concat("default/armor.jpg");
+        break;
+      case "potion":
+        url = url.concat("default/potion.jpg");
+        break;
+      case "ring":
+        url = url.concat("default/ring.jpg");
+        break;
+      case "rod":
+        url = url.concat("default/rod.jpg");
+        break;
+      case "scroll":
+        url = url.concat("default/scroll.jpg");
+        break;
+      case "staff":
+        url = url.concat("default/staff.jpg");
+        break;
+      case "wand":
+        url = url.concat("default/wand.jpg");
+        break;
+      case "weapon":
+        url = url.concat("default/weapon.jpg");
+        break;
+      case "wondrous item":
+        url = url.concat("default/wondrousitem.jpg");
+        break;
+      default:
+        url = url.concat("default/wondrousitem.jpg");
+        break;
+    }
+  } else {
+    url = req.body.url;
+  }
+  return url;
 }

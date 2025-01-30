@@ -2,13 +2,20 @@ import process from "process";
 import express from "express";
 import bodyParser from "body-parser";
 
-import { insertItem, searchItems, getAllItems, findItem } from "./database.js";
+import {
+  insertItem,
+  searchItems,
+  getAllItems,
+  findItem,
+  editItem,
+} from "./database.js";
 import {
   capitalizeWords,
   filterByType,
   filterByRarity,
   filterByCharges,
   filterByAttunement,
+  setItemURL,
 } from "./supportFunctions.js";
 
 const hostname = "127.0.0.3";
@@ -179,44 +186,7 @@ app.post("/newItem", (req, res) => {
   console.log(req.body);
   console.log(req.body.name);
   console.log(req.body.type);
-  let url;
-  if (req.body.url == null) {
-    url = "itemImages/";
-    switch (req.body.type.toLowerCase()) {
-      case "armor":
-        url = url.concat("default/armor.jpg");
-        break;
-      case "potion":
-        url = url.concat("default/potion.jpg");
-        break;
-      case "ring":
-        url = url.concat("default/ring.jpg");
-        break;
-      case "rod":
-        url = url.concat("default/rod.jpg");
-        break;
-      case "scroll":
-        url = url.concat("default/scroll.jpg");
-        break;
-      case "staff":
-        url = url.concat("default/staff.jpg");
-        break;
-      case "wand":
-        url = url.concat("default/wand.jpg");
-        break;
-      case "weapon":
-        url = url.concat("default/weapon.jpg");
-        break;
-      case "wondrous item":
-        url = url.concat("default/wondrousitem.jpg");
-        break;
-      default:
-        url = url.concat("default/wondrousitem.jpg");
-        break;
-    }
-  } else {
-    url = req.body.url;
-  }
+  let url = setItemURL(req);
 
   if (findItem(req.body.name.toLowerCase()) == null) {
     insertItem(
@@ -235,6 +205,23 @@ app.post("/newItem", (req, res) => {
   }
 
   return res.sendStatus(422);
+});
+
+app.post("/editItem", (req, res) => {
+  console.log(req.body);
+
+  let url = setItemURL(req);
+  editItem(
+    req.body.formerName.toLowerCase(),
+    req.body.name.toLowerCase(),
+    req.body.type.toLowerCase(),
+    req.body.additionalType.toLowerCase(),
+    req.body.rarity.toLowerCase(),
+    req.body.attunement.toLowerCase(),
+    req.body.charges.toLowerCase(),
+    req.body.description,
+    url
+  );
 });
 
 app.listen(port, hostname, () => {

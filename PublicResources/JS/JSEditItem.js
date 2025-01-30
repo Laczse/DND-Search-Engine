@@ -7,14 +7,21 @@ async function handleSubmit() {
   console.log("JUHUU!");
   let name = document.getElementById("itemName").value;
   let type = $("#type").val();
+  let additionalType = $("#additionalType").val();
   let rarity = $("#rarity").val();
   let attunement = $("#attunement").val();
   let charges = $("#charges").val();
   let description = document.getElementById("itemDescription").value;
   let url;
+  let formerName = localStorage.getItem("editItem");
+
   console.log(name);
   console.log(type);
+  console.log(additionalType);
   console.log(rarity);
+  console.log(attunement);
+  console.log(charges);
+  console.log(description);
 
   if (
     name != "" &&
@@ -22,7 +29,8 @@ async function handleSubmit() {
     rarity != "" &&
     attunement != "" &&
     charges != "" &&
-    description != ""
+    description != "" &&
+    formerName != ""
   ) {
     console.log("All fields filled");
     let editItem = JSON.stringify({
@@ -34,6 +42,7 @@ async function handleSubmit() {
       charges: charges,
       description: description,
       url: url,
+      formerName: formerName,
     });
     console.log(editItem);
     await fetch("editItem", {
@@ -52,7 +61,7 @@ async function handleSubmit() {
 }
 
 async function fillItemInfo() {
-  itemName = localStorage.getItem("editItem");
+  let itemName = localStorage.getItem("editItem");
   let item;
   console.log(itemName);
 
