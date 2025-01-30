@@ -102,3 +102,7 @@ a.indexbutton {
 p {
   margin-left: 5px;
 }
+
+.indexbutton {
+  cursor: pointer;
+}
