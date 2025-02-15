@@ -10,7 +10,6 @@ import {
   editItem,
 } from "./database.js";
 import {
-  capitalizeWords,
   filterByType,
   filterByRarity,
   filterByCharges,

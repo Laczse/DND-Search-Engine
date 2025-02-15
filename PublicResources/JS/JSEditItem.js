@@ -1,3 +1,5 @@
+import { capitalizeWords } from "./supportFunctions.js";
+
 let submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", handleSubmit);
 
@@ -83,23 +85,11 @@ async function fillItemInfo() {
   console.log(item);
 
   document.getElementById("itemName").value = capitalizeWords(item.name);
-  $("#typeoption").val();
   document.getElementById("additionalType").value = item.additionalType;
+  document.getElementById("itemDescription").value = item.description;
+  $("#type").value(capitalizeWords(item.type)).trigger("chosen:updated");
+
   let rarity = $("#rarity").val();
   let attunement = $("#attunement").val();
   let charges = $("#charges").val();
-  document.getElementById("itemDescription").value = item.description;
-}
-
-function capitalizeWords(str) {
-  const arr = str.split(" ");
-
-  //loop through each element of the array and capitalize the first letter.
-  for (var i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-  }
-  //Join all the elements of the array back into a string
-  //using a blankspace as a separator
-  const str2 = arr.join(" ");
-  return str2;
 }
