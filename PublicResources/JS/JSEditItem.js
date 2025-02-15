@@ -87,9 +87,11 @@ async function fillItemInfo() {
   document.getElementById("itemName").value = capitalizeWords(item.name);
   document.getElementById("additionalType").value = item.additionalType;
   document.getElementById("itemDescription").value = item.description;
-  //$("#type").value(capitalizeWords(item.type)).trigger("chosen:updated");
-
-  let rarity = $("#rarity").val();
-  let attunement = $("#attunement").val();
-  let charges = $("#charges").val();
+  document.getElementById("type").value = capitalizeWords(item.type);
+  document.getElementById("rarity").value = capitalizeWords(item.rarity);
+  document.getElementById("attunement").value = capitalizeWords(
+    item.attunement
+  );
+  document.getElementById("charges").value = capitalizeWords(item.charges);
+  $(".chosen-select").trigger("chosen:updated");
 }
