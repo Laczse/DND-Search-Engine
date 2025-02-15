@@ -135,12 +135,12 @@ function activateCollapsible() {
 function deleteCollapsible() {
   let coll = document.getElementsByClassName("collapsible");
   let repeats = coll.length;
-  for (i = 0; i < repeats; i++) {
+  for (let i = 0; i < repeats; i++) {
     coll[0].remove();
     console.log("Deleting element: " + i);
   }
   let div = document.getElementsByClassName("content");
-  for (i = 0; i < repeats; i++) {
+  for (let i = 0; i < repeats; i++) {
     div[0].remove();
   }
 }

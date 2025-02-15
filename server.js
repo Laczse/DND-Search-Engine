@@ -85,6 +85,10 @@ app.get("/jsEditItem.js", (req, res) => {
   res.sendFile(rootFileSystem + "/publicResources/js/jsEditItem.js");
 });
 
+app.get("/supportFunctions.js", (req, res) => {
+  res.sendFile(rootFileSystem + "/supportFunctions.js");
+});
+
 app.get("/chosen/chosen.css", (req, res) => {
   res.sendFile(rootFileSystem + "/chosen/chosen.css");
 });
