@@ -17,13 +17,11 @@ function capitalizeWords(str) {
   //Join all the elements of the array back into a string
   //using a blankspace as a separator
   const str2 = arr.join(" ");
-  console.log(str2);
   return str2;
 }
 
 function filterByType(items, types) {
   if (items.length != 0) {
-    console.log(types);
     let filteredItems = [];
     if (types.length != 0) {
       items.forEach((element) => {
@@ -41,7 +39,6 @@ function filterByType(items, types) {
 
 function filterByRarity(items, rarities) {
   if (items.length != 0) {
-    console.log(rarities);
     let filteredItems = [];
     if (rarities.length != 0) {
       items.forEach((element) => {
@@ -59,7 +56,6 @@ function filterByRarity(items, rarities) {
 
 function filterByCharges(items, charges) {
   if (items.length != 0) {
-    console.log(charges);
     let filteredItems = [];
     if (charges != "") {
       items.forEach((element) => {
@@ -67,8 +63,6 @@ function filterByCharges(items, charges) {
           filteredItems.push(element);
         }
       });
-      console.log("Before returning list filtered for charges");
-      console.log(filteredItems);
       return filteredItems;
     }
   }
@@ -84,8 +78,6 @@ function filterByAttunement(items, attunement) {
           filteredItems.push(element);
         }
       });
-      console.log("Before returning list filtered for attunement");
-      console.log(filteredItems);
       return filteredItems;
     }
     return items;

@@ -8,7 +8,6 @@ let playerCount = document.getElementById("nrPlayers");
 playerCount.addEventListener("change", updatePlayerPrice);
 
 let clearButton = document.getElementById("clear");
-console.log(clearButton.id);
 clearButton.addEventListener("click", reloadPage);
 
 var totalPriceField = document.createElement("input");
@@ -90,7 +89,6 @@ function createItemLine() {
 
 function reactChosenType(event) {
   var typeSelect = event.target;
-  console.log(typeSelect.value);
 
   //Create and append select list
   var itemSelect = document.createElement("select");
@@ -308,8 +306,6 @@ function updateInputFields(event) {
 function updateFieldsById(idNumber) {
   let item = document.getElementById("itemSelect" + idNumber);
   let condition = document.getElementById("conditionSelect" + idNumber);
-  console.log(item.value);
-  console.log(condition.value);
 
   let standardPriceField = document.getElementById(
     "standardPriceField" + idNumber

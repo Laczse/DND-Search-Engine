@@ -22,15 +22,11 @@ let visible = true;
 let sortedBy;
 
 async function handleSubmit() {
-  console.log("JUHUU!");
   let name = document.getElementById("itemName").value;
   let type = $("#type").val();
   let rarity = $("#rarity").val();
   let attunement = $("#attunement").val();
   let charges = $("#charges").val();
-  console.log(name);
-  console.log(type);
-  console.log(rarity);
   let searchObject = JSON.stringify({
     name: name,
     type: type,
@@ -38,7 +34,6 @@ async function handleSubmit() {
     attunement: attunement,
     charges: charges,
   });
-  console.log(searchObject);
   await fetch("itemSearch", {
     method: "POST",
     headers: {
@@ -106,7 +101,6 @@ function createList(list) {
     }
 
     divContent += "<br>" + list[i].description;
-    console.log(divContent);
     divElement.innerHTML = divContent;
     divElement.className = "content";
     document.body.appendChild(divElement);
@@ -116,7 +110,6 @@ function createList(list) {
 
 function activateCollapsible() {
   let coll = document.getElementsByClassName("collapsible");
-  console.log(coll.length);
   let i;
 
   for (i = 0; i < coll.length; i++) {
@@ -137,7 +130,6 @@ function deleteCollapsible() {
   let repeats = coll.length;
   for (let i = 0; i < repeats; i++) {
     coll[0].remove();
-    console.log("Deleting element: " + i);
   }
   let div = document.getElementsByClassName("content");
   for (let i = 0; i < repeats; i++) {
@@ -146,7 +138,6 @@ function deleteCollapsible() {
 }
 
 async function onLoad() {
-  console.log(list);
   let searchObject = JSON.stringify({});
 
   await fetch("onLoadItemSearch", {
@@ -242,7 +233,6 @@ function sortByRarity() {
 }
 
 function rarityToNumber(rarity) {
-  console.log(rarity);
   switch (rarity) {
     case "common":
       return 0;
@@ -289,7 +279,6 @@ function setTextColor(str) {
       color = "white";
       break;
   }
-  console.log(color);
   return color;
 }
 
@@ -299,7 +288,6 @@ function reload() {
 
 function enterEditItem(event) {
   event.stopPropagation();
-  console.log(event.target.id);
   localStorage.setItem("editItem", event.target.id);
 }
 

@@ -6,7 +6,6 @@ submitButton.addEventListener("click", handleSubmit);
 fillItemInfo();
 
 async function handleSubmit() {
-  console.log("JUHUU!");
   let name = document.getElementById("itemName").value;
   let type = $("#type").val();
   let additionalType = $("#additionalType").val();
@@ -16,14 +15,6 @@ async function handleSubmit() {
   let description = document.getElementById("itemDescription").value;
   let url;
   let formerName = localStorage.getItem("editItem");
-
-  console.log(name);
-  console.log(type);
-  console.log(additionalType);
-  console.log(rarity);
-  console.log(attunement);
-  console.log(charges);
-  console.log(description);
 
   if (
     name != "" &&
@@ -46,7 +37,6 @@ async function handleSubmit() {
       url: url,
       formerName: formerName,
     });
-    console.log(editItem);
     await fetch("editItem", {
       method: "POST",
       headers: {
@@ -65,12 +55,10 @@ async function handleSubmit() {
 async function fillItemInfo() {
   let itemName = localStorage.getItem("editItem");
   let item;
-  console.log(itemName);
 
   let editItem = JSON.stringify({
     name: itemName,
   });
-  console.log(editItem);
   await fetch("findItem", {
     method: "POST",
     headers: {
@@ -81,8 +69,6 @@ async function fillItemInfo() {
   })
     .then((response) => response.json())
     .then((json) => (item = json));
-
-  console.log(item);
 
   document.getElementById("itemName").value = capitalizeWords(item.name);
   document.getElementById("additionalType").value = item.additionalType;
